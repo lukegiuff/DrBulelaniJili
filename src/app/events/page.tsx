@@ -101,7 +101,7 @@ export default function Events() {
                 <div className="relative aspect-video border border-gray-700 group-hover:border-accent transition-all duration-300 overflow-hidden rounded-lg">
                   {/* Video Thumbnail */}
                   <Image
-                    src="/assets/images/videos/African Demand Chinese Surveillance.png"
+                    src="/assets/images/videos/african-demand-chinese-surveillance.png"
                     alt="African Demand for Chinese Surveillance Technology Video Thumbnail"
                     fill
                     style={{ objectFit: 'cover' }}
@@ -144,7 +144,7 @@ export default function Events() {
                 <div className="relative aspect-video border border-gray-700 group-hover:border-accent transition-all duration-300 overflow-hidden rounded-lg">
                   {/* Video Thumbnail */}
                   <Image
-                    src="/assets/images/videos/The China Global South.png"
+                    src="/assets/images/videos/the-china-global-south.png"
                     alt="The China-Global South Conference Panel Video Thumbnail"
                     fill
                     style={{ objectFit: 'cover' }}
@@ -187,7 +187,7 @@ export default function Events() {
                 <div className="relative aspect-video border border-gray-700 group-hover:border-accent transition-all duration-300 overflow-hidden rounded-lg">
                   {/* Video Thumbnail */}
                   <Image
-                    src="/assets/images/videos/Global South Geopolitcs US Europe.png"
+                    src="/assets/images/videos/global-south-geopolitics-us-europe.png"
                     alt="Global South, Geopolitics, and US, Europe, & China's Competition Video Thumbnail"
                     fill
                     style={{ objectFit: 'cover' }}
@@ -230,7 +230,7 @@ export default function Events() {
                 <div className="relative aspect-video border border-gray-700 group-hover:border-accent transition-all duration-300 overflow-hidden rounded-lg">
                   {/* Video Thumbnail */}
                   <Image
-                    src="/assets/images/videos/Africas Demand for and Adoption.png"
+                    src="/assets/images/videos/africas-demand-for-and-adoption.png"
                     alt="Africa's Demand for and Adoption of Chinese Surveillance Technologies Video Thumbnail"
                     fill
                     style={{ objectFit: 'cover' }}
