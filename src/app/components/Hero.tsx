@@ -60,7 +60,7 @@ const Hero = () => {
                 {/* Professional Photo */}
                 <div className="w-full h-full relative overflow-hidden">
                   <Image
-                    src="/assets/images/profile/MWI 100.jpg"
+                    src="/assets/images/profile/mwi-100.jpg"
                     alt="Dr. Bulelani Jili - Professional Portrait"
                     fill
                     style={{ objectFit: 'cover', objectPosition: '30% center' }}
