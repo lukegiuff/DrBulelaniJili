@@ -45,7 +45,7 @@ export default function News() {
                 <span className="text-accent font-medium">February 2024</span>
               </div>
               <p className="text-foreground/80 mb-2">Atlantic Council</p>
-              <p className="text-sm text-foreground/60">Comprehensive analysis of China's growing influence in developing nations</p>
+              <p className="text-sm text-foreground/60">Comprehensive analysis of China&apos;s growing influence in developing nations</p>
             </div>
 
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
@@ -63,7 +63,7 @@ export default function News() {
                 <span className="text-accent font-medium">June 2023</span>
               </div>
               <p className="text-foreground/80 mb-2">The Economist</p>
-              <p className="text-sm text-foreground/60">Analysis of India's digital diplomacy and technology strategy</p>
+              <p className="text-sm text-foreground/60">Analysis of India&apos;s digital diplomacy and technology strategy</p>
             </div>
 
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
@@ -82,7 +82,7 @@ export default function News() {
           <h2 className="text-3xl font-bold mb-8 text-accent">Expert Commentary</h2>
           <div className="bg-gray-800/30 p-6 border border-gray-700 border-l-4 border-l-accent">
             <blockquote className="text-lg italic mb-4">
-              "He writes the most insightful work on these issues"
+              &ldquo;He writes the most insightful work on these issues&rdquo;
             </blockquote>
             <p className="text-accent font-medium">
               Eric Olander, Editor in Chief of the China-Global South Project
@@ -99,7 +99,7 @@ export default function News() {
           <div className="space-y-6">
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold">Charting the Future of China's Infrastructure Projects in Africa After a Decade of Lending</h3>
+                <h3 className="text-xl font-semibold">Charting the Future of China&apos;s Infrastructure Projects in Africa After a Decade of Lending</h3>
                 <span className="text-accent font-medium">December 2021</span>
               </div>
               <p className="text-foreground/80 mb-2">Voice of America</p>
@@ -128,7 +128,7 @@ export default function News() {
           <h2 className="text-3xl font-bold mb-8 text-accent">Stay Connected</h2>
           <div className="bg-gray-800/30 p-8 border border-gray-700 text-center">
             <p className="text-lg mb-6">
-              Keep up to date with Dr. Jili's latest research, publications, and media appearances
+              Keep up to date with Dr. Jili&apos;s latest research, publications, and media appearances
             </p>
             <div className="flex justify-center space-x-6">
               <a 

@@ -32,7 +32,7 @@ export default function Events() {
 
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold">Between Dependency and Independence: African Agency Amid China's Expanding Digital Footprint</h3>
+                <h3 className="text-xl font-semibold">Between Dependency and Independence: African Agency Amid China&apos;s Expanding Digital Footprint</h3>
                 <span className="text-accent font-medium">April 2025</span>
               </div>
               <p className="text-foreground/80 mb-2">Georgetown University, Washington, DC</p>
@@ -46,7 +46,7 @@ export default function Events() {
           <div className="space-y-6">
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold">Kenya's Technological Fix</h3>
+                <h3 className="text-xl font-semibold">Kenya&apos;s Technological Fix</h3>
                 <span className="text-accent font-medium">November 2024</span>
               </div>
               <p className="text-foreground/80 mb-2">STS Circle meeting at Harvard Kennedy School, Cambridge, MA</p>
@@ -78,7 +78,7 @@ export default function Events() {
 
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold">Global South, Geopolitics, and U.S, Europe, and China's Competition to Influence Global AI Regulation</h3>
+                <h3 className="text-xl font-semibold">Global South, Geopolitics, and U.S, Europe, and China&apos;s Competition to Influence Global AI Regulation</h3>
                 <span className="text-accent font-medium">April 2024</span>
               </div>
               <p className="text-foreground/80 mb-2">Berkman Klein Center, Harvard Law School and Georgetown Law School, Cambridge, MA</p>
@@ -213,7 +213,7 @@ export default function Events() {
                 </div>
                 
                 <div className="p-4 bg-gray-800/30 border border-gray-700 border-t-0 group-hover:border-accent transition-colors duration-300 rounded-b-lg">
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">Global South, Geopolitics, and US, Europe, & China's Competition</h3>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">Global South, Geopolitics, and US, Europe, & China&apos;s Competition</h3>
                   <p className="text-foreground/80 mb-2 text-sm">Berkman Klein Center</p>
                   <span className="text-accent text-sm font-medium">Watch Video →</span>
                 </div>
@@ -256,7 +256,7 @@ export default function Events() {
                 </div>
                 
                 <div className="p-4 bg-gray-800/30 border border-gray-700 border-t-0 group-hover:border-accent transition-colors duration-300 rounded-b-lg">
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">Africa's Demand for and Adoption of Chinese Surveillance Technologies</h3>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">Africa&apos;s Demand for and Adoption of Chinese Surveillance Technologies</h3>
                   <p className="text-foreground/80 mb-2 text-sm">Lawfare</p>
                   <span className="text-accent text-sm font-medium">Watch Video →</span>
                 </div>

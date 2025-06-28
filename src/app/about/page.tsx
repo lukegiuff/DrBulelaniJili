@@ -30,12 +30,12 @@ export default function About() {
             He is also a visiting fellow at Yale Law School, a former fellow at the Atlantic Council, and a former cybersecurity fellow 
             at the Belfer Center at Harvard University. He also conducted research for the China, Law, and Development project at Oxford University. 
             The European Research Council funds the 5-year interdisciplinary and multi-sited research project, which seeks to comprehend 
-            the underlying order of China's new globalism.
+            the underlying order of China&apos;s new globalism.
           </p>
 
           <p>
             He has also advised leading think tanks, governments, firms, and watchdogs such as the American Bar Association, OpenAI, 
-            the French government, Freedom House, the UK's Foreign, Commonwealth & Development Office, the US State Department, 
+            the French government, Freedom House, the UK&apos;s Foreign, Commonwealth & Development Office, the US State Department, 
             the United Nations, and the Center for Strategic and International Studies.
           </p>
 
@@ -57,7 +57,7 @@ export default function About() {
               </svg>
               <h3 className="text-2xl font-bold mb-2">Curriculum Vitae</h3>
               <p className="text-foreground/70">
-                Download Dr. Jili's complete academic CV including education, research experience, 
+                Download Dr. Jili&apos;s complete academic CV including education, research experience, 
                 publications, presentations, and professional affiliations.
               </p>
             </div>
@@ -85,7 +85,7 @@ export default function About() {
             </div>
             <div className="border-l-2 border-accent pl-6">
               <h3 className="text-xl font-semibold mb-2">M.Phil., Cambridge University (UK)</h3>
-              <p className="text-foreground/60">Standard Bank Africa Chairman's Scholar</p>
+              <p className="text-foreground/60">Standard Bank Africa Chairman&apos;s Scholar</p>
             </div>
             <div className="border-l-2 border-accent pl-6">
               <h3 className="text-xl font-semibold mb-2">M.A. in Economics, Peking University (China)</h3>

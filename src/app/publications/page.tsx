@@ -78,7 +78,7 @@ export default function Publications() {
             </div>
 
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
-              <h3 className="text-xl font-semibold mb-2">China's Surveillance Ecosystem & the Global Spread of Its Tools</h3>
+              <h3 className="text-xl font-semibold mb-2">China&apos;s Surveillance Ecosystem & the Global Spread of Its Tools</h3>
               <p className="text-accent mb-2">Atlantic Council Primer (2022)</p>
               <p className="text-foreground/80">Jili, Bulelani</p>
             </div>
