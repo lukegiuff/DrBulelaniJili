@@ -54,13 +54,9 @@ const Hero = () => {
                   <Link 
                     href="/about"
                     className="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-accent text-white font-medium hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200 text-sm sm:text-base"
-                    aria-describedby="learn-more-description"
                   >
-                    LEARN MORE
+                    ABOUT DR. JILI
                   </Link>
-                  <span id="learn-more-description" className="sr-only">
-                    Navigate to the about page to learn more about Dr. Bulelani Jili&apos;s academic background and research
-                  </span>
                   
                   <Link 
                     href="/contact"
@@ -126,9 +122,8 @@ const Hero = () => {
               <Link 
                 href="/news" 
                 className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200 inline-block"
-                aria-label="Read more about Africanising Chinese Surveillance Technology"
               >
-                Read More →
+                Read Analysis →
               </Link>
             </article>
 
@@ -139,9 +134,8 @@ const Hero = () => {
               <Link 
                 href="/about" 
                 className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200 inline-block"
-                aria-label="Learn more about International Strategy Forum Fellowship"
               >
-                Learn More →
+                View Fellowship Details →
               </Link>
             </article>
 
