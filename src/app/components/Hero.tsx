@@ -2,9 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Hero = () => {
-  // Manually tweak portrait alignment (horizontal first, then vertical) e.g., 'right center', 'left top', '70% 30%'.
-  const imageObjectPosition = '35% center';
-
   return (
     <>
       {/* Main Hero Section */}
@@ -19,55 +16,55 @@ const Hero = () => {
             src="/assets/images/profile/hero-image.png"
             alt="Dr. Bulelani Jili in professional setting, representing expertise in international relations and technology policy"
             fill
-            style={{ objectFit: 'cover', objectPosition: imageObjectPosition }}
+            className="object-cover object-[66%_center] md:object-[35%_center]"
             priority
           />
         </div>
         
         {/* Natural Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/30 to-black/45 z-10" aria-hidden="true"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/50 to-black/60 z-10" aria-hidden="true"></div>
         
         {/* Content */}
-        <div className="relative z-20 container mx-auto px-6">
+        <div className="relative z-20 container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl">
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-white">
+            <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight text-white">
                   EXPERT.<br />
                   SCHOLAR.<br />
                   <span className="text-accent">PROFESSOR.</span>
                 </h1>
               </div>
               
-              <div className="space-y-4 text-lg text-white/90 leading-relaxed max-w-2xl">
-                <p>
+              <div className="space-y-4 sm:space-y-5">
+                <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-xl">
                   Dr. Bulelani Jili is an Assistant Professor at Georgetown University, Harvard University fellow, and Yale Law School 
                   Visiting Fellow. His groundbreaking research examines Chinese surveillance technology, Africa-China relations, 
                   AI governance, digital colonialism, AI sovereignty, and Chinese cybersecurity threats in the Global South.
                 </p>
-                <p>
+                <p className="hidden md:block text-sm sm:text-base md:text-lg text-white/80 leading-relaxed max-w-2xl">
                   A leading expert in information and communication technology development, his work on Chinese surveillance technology 
-                  and AI governance has appeared in African Affairs, Nature, Theory, Culture & Society, The Economist, 
+                  and AI governance has appeared in African Affairs, Nature, Theory, Culture &amp; Society, The Economist, 
                   the Financial Times, and other prestigious academic and policy outlets.
                 </p>
               </div>
 
               <nav aria-label="Primary call-to-action buttons">
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
                   <Link 
                     href="/about"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-medium hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200"
+                    className="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-accent text-white font-medium hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200 text-sm sm:text-base"
                     aria-describedby="learn-more-description"
                   >
                     LEARN MORE
                   </Link>
                   <span id="learn-more-description" className="sr-only">
-                    Navigate to the about page to learn more about Dr. Bulelani Jili's academic background and research
+                    Navigate to the about page to learn more about Dr. Bulelani Jili&rsquo;s academic background and research
                   </span>
                   
                   <Link 
                     href="/contact"
-                    className="inline-flex items-center justify-center px-8 py-3 border border-accent text-accent font-medium hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200"
+                    className="inline-flex items-center justify-center px-6 sm:px-8 py-3 border border-accent text-accent font-medium hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200 text-sm sm:text-base"
                     aria-describedby="contact-description"
                   >
                     GET IN TOUCH
@@ -79,17 +76,21 @@ const Hero = () => {
               </nav>
 
               {/* Awards Section */}
-              <div className="pt-8 space-y-2">
-                <div className="text-sm text-accent font-medium">RECENT RECOGNITION</div>
-                <div className="text-sm text-white/70">
-                  Google Public Policy Fellow • International Strategy Forum Fellowship • Meta Research PhD Fellowship
+              <div className="pt-4 sm:pt-6 space-y-2">
+                <div className="text-xs sm:text-sm text-accent font-medium uppercase tracking-wide">Recent Recognition</div>
+                <div className="text-xs sm:text-sm text-white/70 leading-relaxed">
+                  <span className="block sm:inline">Google Public Policy Fellow</span>
+                  <span className="hidden sm:inline"> • </span>
+                  <span className="block sm:inline">International Strategy Forum Fellowship</span>
+                  <span className="hidden sm:inline"> • </span>
+                  <span className="block sm:inline">Meta Research PhD Fellowship</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block">
             <div className="animate-bounce" aria-label="Scroll down to see more content">
               <svg 
                 className="w-6 h-6 text-accent" 
@@ -108,49 +109,49 @@ const Hero = () => {
       </section>
 
       {/* Recent Highlights Section */}
-      <section className="py-20 px-6 bg-gray-900/30" aria-labelledby="highlights-heading">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gray-900/30" aria-labelledby="highlights-heading">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 id="highlights-heading" className="text-3xl lg:text-4xl font-bold mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 id="highlights-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               Recent <span className="text-accent">Highlights</span>
             </h2>
-            <div className="w-24 h-1 bg-accent mx-auto" aria-hidden="true"></div>
+            <div className="w-16 sm:w-24 h-1 bg-accent mx-auto" aria-hidden="true"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
-            <article className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
-              <time className="text-accent text-sm font-medium mb-2" dateTime="2025-05">MAY 2025</time>
-              <h3 className="text-lg font-semibold mb-3">Africanising Chinese Surveillance Technology</h3>
-              <p className="text-foreground/80 text-sm mb-4">Featured analysis in East Asia Forum on how African nations are adapting Chinese surveillance technologies to local contexts.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8" role="list">
+            <article className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
+              <time className="text-accent text-sm font-medium mb-2 block" dateTime="2025-05">MAY 2025</time>
+              <h3 className="text-base sm:text-lg font-semibold mb-3">Africanising Chinese Surveillance Technology</h3>
+              <p className="text-foreground/80 text-sm mb-4 leading-relaxed">Featured analysis in East Asia Forum on how African nations are adapting Chinese surveillance technologies to local contexts.</p>
               <Link 
                 href="/news" 
-                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200"
+                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200 inline-block"
                 aria-label="Read more about Africanising Chinese Surveillance Technology"
               >
                 Read More →
               </Link>
             </article>
 
-            <article className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
-              <time className="text-accent text-sm font-medium mb-2" dateTime="2024">2024</time>
-              <h3 className="text-lg font-semibold mb-3">International Strategy Forum Fellowship</h3>
-              <p className="text-foreground/80 text-sm mb-4">Awarded prestigious fellowship recognizing excellence in international affairs research and policy impact.</p>
+            <article className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
+              <time className="text-accent text-sm font-medium mb-2 block" dateTime="2024">2024</time>
+              <h3 className="text-base sm:text-lg font-semibold mb-3">International Strategy Forum Fellowship</h3>
+              <p className="text-foreground/80 text-sm mb-4 leading-relaxed">Awarded prestigious fellowship recognizing excellence in international affairs research and policy impact.</p>
               <Link 
                 href="/about" 
-                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200"
+                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200 inline-block"
                 aria-label="Learn more about International Strategy Forum Fellowship"
               >
                 Learn More →
               </Link>
             </article>
 
-            <article className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
-              <time className="text-accent text-sm font-medium mb-2" dateTime="2023">2023</time>
-              <h3 className="text-lg font-semibold mb-3">Congressional Citation</h3>
-              <p className="text-foreground/80 text-sm mb-4">Research on Chinese surveillance technology cited by US Congress Committee on Homeland Security and Congressional-Executive Commission on China.</p>
+            <article className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
+              <time className="text-accent text-sm font-medium mb-2 block" dateTime="2023">2023</time>
+              <h3 className="text-base sm:text-lg font-semibold mb-3">Congressional Citation</h3>
+              <p className="text-foreground/80 text-sm mb-4 leading-relaxed">Research on Chinese surveillance technology cited by US Congress Committee on Homeland Security and Congressional-Executive Commission on China.</p>
               <Link 
                 href="/publications" 
-                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200"
+                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200 inline-block"
                 aria-label="View publications related to Congressional Citation"
               >
                 View Publications →
@@ -161,57 +162,57 @@ const Hero = () => {
       </section>
 
       {/* Research Focus Section */}
-      <section className="py-20 px-6" aria-labelledby="research-heading">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6" aria-labelledby="research-heading">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 id="research-heading" className="text-3xl lg:text-4xl font-bold mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 id="research-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               Research <span className="text-accent">Focus</span>
             </h2>
-            <div className="w-24 h-1 bg-accent mx-auto" aria-hidden="true"></div>
-            <p className="text-lg text-foreground/80 mt-6 max-w-3xl mx-auto">
+            <div className="w-16 sm:w-24 h-1 bg-accent mx-auto" aria-hidden="true"></div>
+            <p className="text-base sm:text-lg text-foreground/80 mt-6 max-w-3xl mx-auto">
               Interdisciplinary research at the intersection of technology, politics, and international relations
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6" role="list">
             <div className="text-center group" role="listitem">
-              <div className="w-16 h-16 bg-accent/20 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200" role="img" aria-label="AI Governance icon">
-                <svg className="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-accent/20 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200" role="img" aria-label="AI Governance icon">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2">AI Governance</h3>
-              <p className="text-sm text-foreground/70">Global AI regulation and policy frameworks</p>
+              <h3 className="text-sm sm:text-lg font-semibold mb-1 sm:mb-2">AI Governance</h3>
+              <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">Global AI regulation and policy frameworks</p>
             </div>
 
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-accent/20 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200">
-                <svg className="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+            <div className="text-center group" role="listitem">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-accent/20 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200" role="img" aria-label="Cybersecurity icon">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Cybersecurity</h3>
-              <p className="text-sm text-foreground/70">Digital security and surveillance technologies</p>
+              <h3 className="text-sm sm:text-lg font-semibold mb-1 sm:mb-2">Cybersecurity</h3>
+              <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">Digital security and surveillance technologies</p>
             </div>
 
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-accent/20 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200">
-                <svg className="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+            <div className="text-center group" role="listitem">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-accent/20 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200" role="img" aria-label="Africa-China Relations icon">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Africa-China Relations</h3>
-              <p className="text-sm text-foreground/70">Technology transfer and digital diplomacy</p>
+              <h3 className="text-sm sm:text-lg font-semibold mb-1 sm:mb-2">Africa-China</h3>
+              <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">International relations and geopolitics</p>
             </div>
 
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-accent/20 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200">
-                <svg className="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div className="text-center group" role="listitem">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-accent/20 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200" role="img" aria-label="Digital Policy icon">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Digital Policy</h3>
-              <p className="text-sm text-foreground/70">Internet governance and privacy law</p>
+              <h3 className="text-sm sm:text-lg font-semibold mb-1 sm:mb-2">Digital Policy</h3>
+              <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">Technology governance and regulation</p>
             </div>
           </div>
         </div>
@@ -287,7 +288,7 @@ const Hero = () => {
 
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
               <div className="text-accent text-sm font-medium mb-2">APRIL 2025</div>
-              <h3 className="text-lg font-semibold mb-3">African Agency Amid China's Digital Footprint</h3>
+              <h3 className="text-lg font-semibold mb-3">African Agency Amid China&rsquo;s Digital Footprint</h3>
               <p className="text-foreground/80 text-sm mb-4">Georgetown University, Washington, DC</p>
               <p className="text-foreground/60 text-xs">Exploring the balance between dependency and independence in Africa-China digital relations.</p>
             </div>
