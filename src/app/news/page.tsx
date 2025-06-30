@@ -17,7 +17,7 @@ export default function News() {
             src="/assets/images/profile/updatesimage.jpg"
             alt="Dr. Bulelani Jili - News & Updates Background"
             fill
-            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
             priority
           />
         </div>

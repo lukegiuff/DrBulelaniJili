@@ -2,9 +2,11 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 const Navigation = () => {
   const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
     { href: '/', label: 'HOME' },
@@ -16,40 +18,95 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md">
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-accent">
-            DR. BULELANI JILI
-          </Link>
+    <>
+      {/* Skip to main content link for keyboard users */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] bg-accent text-background px-4 py-2 rounded transition-all duration-200"
+      >
+        Skip to main content
+      </a>
+      
+      <nav 
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link 
+              href="/" 
+              className="text-2xl font-bold text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded-sm transition-all duration-200"
+              aria-label="Dr. Bulelani Jili - Homepage"
+            >
+              DR. BULELANI JILI
+            </Link>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-accent ${
-                  pathname === item.href
-                    ? 'text-accent'
-                    : 'text-foreground/80'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {/* Desktop Navigation Links */}
+            <div className="hidden md:flex items-center space-x-8" role="menubar">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  role="menuitem"
+                  className={`text-sm font-medium transition-all duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded-sm px-2 py-1 ${
+                    pathname === item.href
+                      ? 'text-accent font-semibold'
+                      : 'text-foreground/80'
+                  }`}
+                  aria-current={pathname === item.href ? 'page' : undefined}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="mobile-menu-btn flex md:!hidden text-foreground p-2 rounded focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent transition-all duration-200 hover:text-accent"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label="Toggle mobile menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button className="md:hidden text-foreground">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div 
+              id="mobile-menu"
+              className="md:hidden mt-4 pb-4 border-t border-white/10"
+              role="menu"
+              aria-label="Mobile navigation menu"
+            >
+              <div className="flex flex-col space-y-2 mt-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    role="menuitem"
+                    className={`text-sm font-medium transition-all duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded-sm px-3 py-2 ${
+                      pathname === item.href
+                        ? 'text-accent font-semibold bg-accent/10'
+                        : 'text-foreground/80'
+                    }`}
+                    aria-current={pathname === item.href ? 'page' : undefined}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 

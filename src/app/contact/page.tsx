@@ -122,10 +122,11 @@ export default function Contact() {
           {/* Contact Form */}
           <div>
             <h2 className="text-3xl font-bold mb-6 text-accent">Contact Me</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+              <fieldset className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <legend className="sr-only">Personal Information</legend>
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium mb-2">
+                  <label htmlFor="firstName" className="block text-sm font-medium mb-2 text-foreground">
                     First Name *
                   </label>
                   <input
@@ -133,13 +134,16 @@ export default function Contact() {
                     id="firstName"
                     name="firstName"
                     required
+                    aria-required="true"
+                    aria-describedby="firstName-error"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 focus:border-accent focus:outline-none transition-colors duration-200"
+                    className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200"
                   />
+                  <div id="firstName-error" className="sr-only" aria-live="polite"></div>
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium mb-2">
+                  <label htmlFor="lastName" className="block text-sm font-medium mb-2 text-foreground">
                     Last Name *
                   </label>
                   <input
@@ -147,15 +151,18 @@ export default function Contact() {
                     id="lastName"
                     name="lastName"
                     required
+                    aria-required="true"
+                    aria-describedby="lastName-error"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 focus:border-accent focus:outline-none transition-colors duration-200"
+                    className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200"
                   />
+                  <div id="lastName-error" className="sr-only" aria-live="polite"></div>
                 </div>
-              </div>
+              </fieldset>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
                   Email Address *
                 </label>
                 <input
@@ -163,36 +170,42 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
+                  aria-required="true"
+                  aria-describedby="email-error email-help"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 focus:border-accent focus:outline-none transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200"
                 />
+                <div id="email-help" className="text-sm text-foreground/60 mt-1">We'll never share your email address</div>
+                <div id="email-error" className="sr-only" aria-live="polite"></div>
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                  Phone Number
+                <label htmlFor="phone" className="block text-sm font-medium mb-2 text-foreground">
+                  Phone Number <span className="text-foreground/60">(Optional)</span>
                 </label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
+                  aria-describedby="phone-help"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 focus:border-accent focus:outline-none transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200"
                 />
+                <div id="phone-help" className="text-sm text-foreground/60 mt-1">Include country code if outside US</div>
               </div>
 
               <div>
-                <label htmlFor="howDidYouHear" className="block text-sm font-medium mb-2">
-                  How did you hear about me?
+                <label htmlFor="howDidYouHear" className="block text-sm font-medium mb-2 text-foreground">
+                  How did you hear about me? <span className="text-foreground/60">(Optional)</span>
                 </label>
                 <select
                   id="howDidYouHear"
                   name="howDidYouHear"
                   value={formData.howDidYouHear}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 focus:border-accent focus:outline-none transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200"
                 >
                   <option value="">Select an option</option>
                   <option value="academic-publication">Academic Publication</option>
@@ -206,27 +219,35 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
                   How can I help you? *
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   required
+                  aria-required="true"
+                  aria-describedby="message-error message-help"
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Please describe your inquiry, collaboration proposal, media request, or any questions you may have..."
-                  className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 focus:border-accent focus:outline-none transition-colors duration-200 resize-vertical"
+                  className="w-full px-4 py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 resize-vertical"
                 />
+                <div id="message-help" className="text-sm text-foreground/60 mt-1">Please provide as much detail as possible</div>
+                <div id="message-error" className="sr-only" aria-live="polite"></div>
               </div>
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-accent text-background font-medium hover:bg-accent-dark transition-colors duration-200"
+                className="w-full px-8 py-4 bg-accent text-background font-medium rounded hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-describedby="submit-help"
               >
                 Send Message
               </button>
+              <div id="submit-help" className="text-sm text-foreground/60 text-center">
+                I typically respond within 2-3 business days
+              </div>
             </form>
 
             <div className="mt-8 p-4 bg-gray-800/30 border border-gray-700">

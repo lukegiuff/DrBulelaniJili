@@ -8,20 +8,24 @@ const Hero = () => {
   return (
     <>
       {/* Main Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
+      <section 
+        className="relative min-h-screen flex items-center justify-center pt-20"
+        role="banner"
+        aria-label="Dr. Bulelani Jili - Homepage Hero"
+      >
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-                                  <Image
-              src="/assets/images/profile/hero-image.png"
-              alt="Dr. Bulelani Jili - Professional Portrait"
-              fill
-              style={{ objectFit: 'cover', objectPosition: imageObjectPosition }}
-              priority
-            />
+          <Image
+            src="/assets/images/profile/hero-image.png"
+            alt="Dr. Bulelani Jili in professional setting, representing expertise in international relations and technology policy"
+            fill
+            style={{ objectFit: 'cover', objectPosition: imageObjectPosition }}
+            priority
+          />
         </div>
         
         {/* Natural Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/30 to-black/45 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/30 to-black/45 z-10" aria-hidden="true"></div>
         
         {/* Content */}
         <div className="relative z-20 container mx-auto px-6">
@@ -47,20 +51,31 @@ const Hero = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link 
-                  href="/about"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-medium rounded-none hover:bg-accent-dark transition-colors duration-200"
-                >
-                  LEARN MORE
-                </Link>
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-accent text-accent font-medium rounded-none hover:bg-accent hover:text-white transition-colors duration-200"
-                >
-                  GET IN TOUCH
-                </Link>
-              </div>
+              <nav aria-label="Primary call-to-action buttons">
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <Link 
+                    href="/about"
+                    className="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-medium hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200"
+                    aria-describedby="learn-more-description"
+                  >
+                    LEARN MORE
+                  </Link>
+                  <span id="learn-more-description" className="sr-only">
+                    Navigate to the about page to learn more about Dr. Bulelani Jili's academic background and research
+                  </span>
+                  
+                  <Link 
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-8 py-3 border border-accent text-accent font-medium hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200"
+                    aria-describedby="contact-description"
+                  >
+                    GET IN TOUCH
+                  </Link>
+                  <span id="contact-description" className="sr-only">
+                    Navigate to the contact page to send a message or inquire about collaboration
+                  </span>
+                </div>
+              </nav>
 
               {/* Awards Section */}
               <div className="pt-8 space-y-2">
@@ -74,67 +89,93 @@ const Hero = () => {
 
           {/* Scroll indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            <div className="animate-bounce">
-              <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="animate-bounce" aria-label="Scroll down to see more content">
+              <svg 
+                className="w-6 h-6 text-accent" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                role="img"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
+              <span className="sr-only">Scroll down to see more content</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Recent Highlights Section */}
-      <section className="py-20 px-6 bg-gray-900/30">
+      <section className="py-20 px-6 bg-gray-900/30" aria-labelledby="highlights-heading">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            <h2 id="highlights-heading" className="text-3xl lg:text-4xl font-bold mb-4">
               Recent <span className="text-accent">Highlights</span>
             </h2>
-            <div className="w-24 h-1 bg-accent mx-auto"></div>
+            <div className="w-24 h-1 bg-accent mx-auto" aria-hidden="true"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
-              <div className="text-accent text-sm font-medium mb-2">MAY 2025</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
+            <article className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
+              <time className="text-accent text-sm font-medium mb-2" dateTime="2025-05">MAY 2025</time>
               <h3 className="text-lg font-semibold mb-3">Africanising Chinese Surveillance Technology</h3>
               <p className="text-foreground/80 text-sm mb-4">Featured analysis in East Asia Forum on how African nations are adapting Chinese surveillance technologies to local contexts.</p>
-              <Link href="/news" className="text-accent text-sm font-medium hover:text-accent-dark">Read More →</Link>
-            </div>
+              <Link 
+                href="/news" 
+                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200"
+                aria-label="Read more about Africanising Chinese Surveillance Technology"
+              >
+                Read More →
+              </Link>
+            </article>
 
-            <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
-              <div className="text-accent text-sm font-medium mb-2">2024</div>
+            <article className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
+              <time className="text-accent text-sm font-medium mb-2" dateTime="2024">2024</time>
               <h3 className="text-lg font-semibold mb-3">International Strategy Forum Fellowship</h3>
               <p className="text-foreground/80 text-sm mb-4">Awarded prestigious fellowship recognizing excellence in international affairs research and policy impact.</p>
-              <Link href="/about" className="text-accent text-sm font-medium hover:text-accent-dark">Learn More →</Link>
-            </div>
+              <Link 
+                href="/about" 
+                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200"
+                aria-label="Learn more about International Strategy Forum Fellowship"
+              >
+                Learn More →
+              </Link>
+            </article>
 
-            <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
-              <div className="text-accent text-sm font-medium mb-2">2023</div>
+            <article className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
+              <time className="text-accent text-sm font-medium mb-2" dateTime="2023">2023</time>
               <h3 className="text-lg font-semibold mb-3">Congressional Citation</h3>
               <p className="text-foreground/80 text-sm mb-4">Research on Chinese surveillance technology cited by US Congress Committee on Homeland Security and Congressional-Executive Commission on China.</p>
-              <Link href="/publications" className="text-accent text-sm font-medium hover:text-accent-dark">View Publications →</Link>
-            </div>
+              <Link 
+                href="/publications" 
+                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200"
+                aria-label="View publications related to Congressional Citation"
+              >
+                View Publications →
+              </Link>
+            </article>
           </div>
         </div>
       </section>
 
       {/* Research Focus Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" aria-labelledby="research-heading">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            <h2 id="research-heading" className="text-3xl lg:text-4xl font-bold mb-4">
               Research <span className="text-accent">Focus</span>
             </h2>
-            <div className="w-24 h-1 bg-accent mx-auto"></div>
+            <div className="w-24 h-1 bg-accent mx-auto" aria-hidden="true"></div>
             <p className="text-lg text-foreground/80 mt-6 max-w-3xl mx-auto">
               Interdisciplinary research at the intersection of technology, politics, and international relations
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-accent/20 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200">
-                <svg className="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
+            <div className="text-center group" role="listitem">
+              <div className="w-16 h-16 bg-accent/20 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200" role="img" aria-label="AI Governance icon">
+                <svg className="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clipRule="evenodd" />
                 </svg>
               </div>

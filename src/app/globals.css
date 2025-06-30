@@ -46,3 +46,258 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #0066a8;
 }
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --foreground: #ffffff; /* Pure white for high contrast */
+    --background: #000000; /* Pure black for high contrast */
+    --accent: #ffd700; /* Brighter gold for high contrast */
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, 
+  *::before, 
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus,
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Enhanced focus indicators */
+*:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Skip link styling */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--accent);
+  color: var(--background);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: top 0.3s;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Improved button and link focus styles */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 142, 221, 0.2);
+}
+
+/* Ensure minimum touch target size for mobile accessibility */
+button,
+a,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Better color contrast for placeholders */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+/* High contrast focus for keyboard navigation */
+@media (prefers-contrast: high) {
+  *:focus {
+    outline: 3px solid #ffff00;
+    outline-offset: 2px;
+  }
+  
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 3px solid #ffff00;
+    box-shadow: 0 0 0 6px rgba(255, 255, 0, 0.3);
+  }
+}
+
+/* Ensure proper line height for readability */
+p, li, td, th {
+  line-height: 1.6;
+}
+
+/* Better spacing for form elements */
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  display: block;
+}
+
+/* Error states for forms */
+.error {
+  border-color: #ef4444 !important;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Focus management for modals and dropdowns */
+.focus-trap {
+  outline: none;
+}
+
+/* Better visibility for required field indicators */
+.required::after {
+  content: " *";
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Improved hover states for better feedback */
+button:hover,
+a:hover {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Large text support */
+@media (min-resolution: 192dpi) {
+  body {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+}
+
+/* ===== ACCESSIBILITY PANEL SETTINGS ===== */
+
+/* High contrast mode class */
+.high-contrast {
+  --foreground: #ffffff !important;
+  --background: #000000 !important;
+  --accent: #ffff00 !important;
+}
+
+.high-contrast * {
+  border-color: #ffffff !important;
+}
+
+.high-contrast img {
+  filter: contrast(150%) brightness(90%);
+}
+
+/* Large text mode class */
+.large-text {
+  font-size: 120% !important;
+  line-height: 1.8 !important;
+}
+
+.large-text h1 {
+  font-size: 130% !important;
+}
+
+.large-text h2 {
+  font-size: 125% !important;
+}
+
+.large-text h3 {
+  font-size: 120% !important;
+}
+
+.large-text p,
+.large-text li {
+  font-size: 110% !important;
+  line-height: 1.9 !important;
+}
+
+.large-text button,
+.large-text input,
+.large-text textarea,
+.large-text select {
+  font-size: 110% !important;
+  padding: 1rem !important;
+}
+
+/* Reduced motion mode class */
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  transform: none !important;
+}
+
+.reduced-motion .animate-bounce {
+  animation: none !important;
+}
+
+/* Focus styles for accessibility panel */
+.accessibility-panel {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Ensure accessibility button is always visible */
+@media (max-width: 768px) {
+  .accessibility-toggle {
+    right: 1rem !important;
+    top: 5rem !important;
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+}
+
+/* Force hide mobile menu button on desktop */
+@media (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none !important;
+  }
+}

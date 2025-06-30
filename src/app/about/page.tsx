@@ -10,12 +10,16 @@ export default function About() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center pt-20">
+      <section 
+        className="relative min-h-[60vh] flex items-center justify-center pt-20"
+        role="banner"
+        aria-labelledby="about-hero-heading"
+      >
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/images/profile/aboutimage.jpg"
-            alt="Dr. Bulelani Jili - About Page Background"
+            alt="Professional academic setting representing Dr. Bulelani Jili's scholarly work in international relations"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
             priority
@@ -23,17 +27,17 @@ export default function About() {
         </div>
         
         {/* Gradient Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/65 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/65 z-10" aria-hidden="true"></div>
         
         {/* Content */}
         <div className="relative z-20 container mx-auto px-6 text-center flex items-center justify-center min-h-full">
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
               <div className="space-y-4">
-                <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-white">
+                <h1 id="about-hero-heading" className="text-4xl lg:text-6xl font-bold leading-tight text-white">
                   About <span className="text-accent">Dr. Bulelani Jili</span>
                 </h1>
-                <div className="w-24 h-1 bg-accent mx-auto"></div>
+                <div className="w-24 h-1 bg-accent mx-auto" aria-hidden="true"></div>
               </div>
               
               {/* Quote Section */}
@@ -98,20 +102,24 @@ export default function About() {
               <a 
                 href="/assets/images/profile/Jili_Bulelani_CV.pdf"
                 download="Dr_Bulelani_Jili_CV.pdf"
-                className="inline-flex items-center px-8 py-4 bg-accent text-background font-semibold text-lg hover:bg-accent-dark transition-colors duration-200 group"
+                className="inline-flex items-center px-8 py-4 bg-accent text-background font-semibold text-lg hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200 group"
+                aria-describedby="cv-description"
               >
-                <svg className="w-5 h-5 mr-3 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 mr-3 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
                 Download CV (PDF)
               </a>
+              <span id="cv-description" className="sr-only">
+                Downloads Dr. Bulelani Jili's curriculum vitae as a PDF file
+              </span>
             </div>
           </div>
 
           {/* Research Areas Section */}
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold mb-8 text-accent">Research Areas</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <section className="mt-16" aria-labelledby="research-areas-heading">
+            <h2 id="research-areas-heading" className="text-3xl font-bold mb-8 text-accent">Research Areas</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3" role="list">
               {[
                 'Africa-China Relations',
                 'AI Governance',
@@ -122,58 +130,66 @@ export default function About() {
                 'Tech Ethics',
                 'Political Economy'
               ].map((area) => (
-                <div key={area} className="bg-gray-800/30 p-3 border border-gray-700 text-sm text-center">
+                <div key={area} className="bg-gray-800/30 p-3 border border-gray-700 text-sm text-center" role="listitem">
                   {area}
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
           {/* Education Section */}
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold mb-8 text-accent">Education</h2>
-            <div className="space-y-6">
-              <div className="border-l-2 border-accent pl-6">
+          <section className="mt-16" aria-labelledby="education-heading">
+            <h2 id="education-heading" className="text-3xl font-bold mb-8 text-accent">Education</h2>
+            <div className="space-y-6" role="list">
+              <article className="border-l-2 border-accent pl-6" role="listitem">
                 <h3 className="text-xl font-semibold mb-2">Ph.D., Harvard University</h3>
                 <p className="text-foreground/60">Doctoral studies in African political economy and international relations</p>
-              </div>
-              <div className="border-l-2 border-accent pl-6">
+              </article>
+              <article className="border-l-2 border-accent pl-6" role="listitem">
                 <h3 className="text-xl font-semibold mb-2">M.Phil., Cambridge University (UK)</h3>
                 <p className="text-foreground/60">Standard Bank Africa Chairman&apos;s Scholar</p>
-              </div>
-              <div className="border-l-2 border-accent pl-6">
+              </article>
+              <article className="border-l-2 border-accent pl-6" role="listitem">
                 <h3 className="text-xl font-semibold mb-2">M.A. in Economics, Peking University (China)</h3>
                 <p className="text-foreground/60">Yenching Scholarship recipient, Yenching Academy</p>
-              </div>
-              <div className="border-l-2 border-accent pl-6">
+              </article>
+              <article className="border-l-2 border-accent pl-6" role="listitem">
                 <h3 className="text-xl font-semibold mb-2">A.B. with honors in Philosophy, Politics, and Economics</h3>
                 <p className="text-foreground/60">Wesleyan University (CT), College of Social Studies, Pfeiffer Scholar</p>
-              </div>
+              </article>
             </div>
-          </div>
+          </section>
 
           {/* Awards Section */}
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold mb-8 text-accent">Recent Awards & Fellowships</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gray-800/30 p-6 border border-gray-700">
-                <h3 className="text-lg font-semibold text-accent mb-2">2024</h3>
+          <section className="mt-16" aria-labelledby="awards-heading">
+            <h2 id="awards-heading" className="text-3xl font-bold mb-8 text-accent">Recent Awards & Fellowships</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">
+              <article className="bg-gray-800/30 p-6 border border-gray-700" role="listitem">
+                <h3 className="text-lg font-semibold text-accent mb-2">
+                  <time dateTime="2024">2024</time>
+                </h3>
                 <p>International Strategy Forum Fellowship</p>
-              </div>
-              <div className="bg-gray-800/30 p-6 border border-gray-700">
-                <h3 className="text-lg font-semibold text-accent mb-2">2023</h3>
+              </article>
+              <article className="bg-gray-800/30 p-6 border border-gray-700" role="listitem">
+                <h3 className="text-lg font-semibold text-accent mb-2">
+                  <time dateTime="2023">2023</time>
+                </h3>
                 <p>Google Public Policy Fellow</p>
-              </div>
-              <div className="bg-gray-800/30 p-6 border border-gray-700">
-                <h3 className="text-lg font-semibold text-accent mb-2">2022</h3>
+              </article>
+              <article className="bg-gray-800/30 p-6 border border-gray-700" role="listitem">
+                <h3 className="text-lg font-semibold text-accent mb-2">
+                  <time dateTime="2022">2022</time>
+                </h3>
                 <p>Meta Research PhD Fellowship Award</p>
-              </div>
-              <div className="bg-gray-800/30 p-6 border border-gray-700">
-                <h3 className="text-lg font-semibold text-accent mb-2">2022</h3>
+              </article>
+              <article className="bg-gray-800/30 p-6 border border-gray-700" role="listitem">
+                <h3 className="text-lg font-semibold text-accent mb-2">
+                  <time dateTime="2022">2022</time>
+                </h3>
                 <p>Wenner-Gren Foundation Fellowship</p>
-              </div>
+              </article>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { EB_Garamond, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
+import AccessibilityPanel from "./components/AccessibilityPanel";
 
 const garamond = EB_Garamond({
   variable: "--font-garamond",
@@ -36,7 +37,8 @@ export default function RootLayout({
         className={`${garamond.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         <Navigation />
-        <main>
+        <AccessibilityPanel />
+        <main id="main-content" role="main" tabIndex={-1}>
           {children}
         </main>
       </body>
