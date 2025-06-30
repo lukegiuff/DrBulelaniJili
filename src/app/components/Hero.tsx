@@ -2,23 +2,40 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Hero = () => {
+  // Manually tweak portrait alignment (horizontal first, then vertical) e.g., 'right center', 'left top', '70% 30%'.
+  const imageObjectPosition = '35% center';
+
   return (
     <>
       {/* Main Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
+      <section className="relative min-h-screen flex items-center justify-center pt-20">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+                                  <Image
+              src="/assets/images/profile/hero-image.png"
+              alt="Dr. Bulelani Jili - Professional Portrait"
+              fill
+              style={{ objectFit: 'cover', objectPosition: imageObjectPosition }}
+              priority
+            />
+        </div>
+        
+        {/* Natural Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/30 to-black/45 z-10"></div>
+        
+        {/* Content */}
+        <div className="relative z-20 container mx-auto px-6">
+          <div className="max-w-3xl">
             <div className="space-y-6">
               <div className="space-y-2">
-                <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                  ASSISTANT<br />
-                  PROFESSOR.<br />
-                  <span className="text-accent">SCHOLAR.</span>
+                <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-white">
+                  EXPERT.<br />
+                  SCHOLAR.<br />
+                  <span className="text-accent">PROFESSOR.</span>
                 </h1>
               </div>
               
-              <div className="space-y-4 text-lg text-foreground/80 leading-relaxed max-w-xl">
+              <div className="space-y-4 text-lg text-white/90 leading-relaxed max-w-2xl">
                 <p>
                   Dr. Bulelani Jili is an Assistant Professor at Georgetown University, a Visiting Fellow at Yale Law School, 
                   and a Fellow at New America. His research examines Africa-China relations, AI governance, cybersecurity, 
@@ -33,13 +50,13 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link 
                   href="/about"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-accent text-background font-medium rounded-none hover:bg-accent-dark transition-colors duration-200"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-medium rounded-none hover:bg-accent-dark transition-colors duration-200"
                 >
                   LEARN MORE
                 </Link>
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-accent text-accent font-medium rounded-none hover:bg-accent hover:text-background transition-colors duration-200"
+                  className="inline-flex items-center justify-center px-8 py-3 border border-accent text-accent font-medium rounded-none hover:bg-accent hover:text-white transition-colors duration-200"
                 >
                   GET IN TOUCH
                 </Link>
@@ -48,36 +65,15 @@ const Hero = () => {
               {/* Awards Section */}
               <div className="pt-8 space-y-2">
                 <div className="text-sm text-accent font-medium">RECENT RECOGNITION</div>
-                <div className="text-sm text-foreground/60">
+                <div className="text-sm text-white/70">
                   Google Public Policy Fellow • International Strategy Forum Fellowship • Meta Research PhD Fellowship
                 </div>
-              </div>
-            </div>
-
-            {/* Right Image */}
-            <div className="relative">
-              <div className="aspect-[3/4] relative">
-                {/* Professional Photo */}
-                <div className="w-full h-full relative overflow-hidden">
-                  <Image
-                    src="/assets/images/profile/mwi-100.jpg"
-                    alt="Dr. Bulelani Jili - Professional Portrait"
-                    fill
-                    style={{ objectFit: 'cover', objectPosition: '30% center' }}
-                    className="rounded-sm"
-                    priority
-                  />
-                </div>
-                
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -left-4 w-8 h-8 border-l-2 border-t-2 border-accent"></div>
-                <div className="absolute -bottom-4 -right-4 w-8 h-8 border-r-2 border-b-2 border-accent"></div>
               </div>
             </div>
           </div>
 
           {/* Scroll indicator */}
-          <div className="flex justify-center mt-16">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
             <div className="animate-bounce">
               <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -214,7 +210,7 @@ const Hero = () => {
                 <span className="text-accent font-medium text-sm">2022</span>
               </div>
               <p className="text-accent mb-2">Asia Policy</p>
-              <p className="text-foreground/80 text-sm">Examination of Chinese information and communication technology investments in Kenya&apos;s smart city development.</p>
+              <p className="text-foreground/80 text-sm">Examination of Chinese information and communication technology investments in Kenya's smart city development.</p>
             </div>
           </div>
 
@@ -249,7 +245,7 @@ const Hero = () => {
 
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
               <div className="text-accent text-sm font-medium mb-2">APRIL 2025</div>
-              <h3 className="text-lg font-semibold mb-3">African Agency Amid China&apos;s Digital Footprint</h3>
+              <h3 className="text-lg font-semibold mb-3">African Agency Amid China's Digital Footprint</h3>
               <p className="text-foreground/80 text-sm mb-4">Georgetown University, Washington, DC</p>
               <p className="text-foreground/60 text-xs">Exploring the balance between dependency and independence in Africa-China digital relations.</p>
             </div>

@@ -1,8 +1,5 @@
-name = "drbulelanijili"
+name = "nextjs-app"
 compatibility_date = "2024-01-15"
-
-[assets]
-directory = "./out"
 
 [env.production]
 # CloudFlare Pages deployment configuration 

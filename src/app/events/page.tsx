@@ -2,25 +2,60 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Presentations & Events - Dr. Bulelani Jili',
-  description: 'Explore Dr. Bulelani Jili\'s speaking engagements, presentations, and conference appearances worldwide.',
+  title: 'Events - Dr. Bulelani Jili',
+  description: 'Explore Dr. Bulelani Jili\'s speaking engagements, events, and conference appearances worldwide.',
 };
 
 export default function Events() {
   return (
-    <div className="min-h-screen pt-24 pb-16 px-6">
-      <div className="container mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-accent">Presentations</span> & Events
-          </h1>
-          <div className="w-24 h-1 bg-accent"></div>
+    <>
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] flex items-center justify-center pt-20">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/images/profile/eventsimage.jpg"
+            alt="Dr. Bulelani Jili - Events Background"
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
+            priority
+          />
         </div>
+        
+        {/* Gradient Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/85 z-10"></div>
+        
+        {/* Content */}
+        <div className="relative z-20 container mx-auto px-6 text-center flex items-center justify-center min-h-full">
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-white">
+                  <span className="text-accent">Events</span> & Speaking
+                </h1>
+                <div className="w-24 h-1 bg-accent mx-auto"></div>
+              </div>
+              
+              {/* Subtitle */}
+              <div className="space-y-4">
+                <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
+                  International conferences, keynote addresses, and expert panels on technology, 
+                  governance, and Africa-China relations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <div className="py-20 px-6">
+        <div className="container mx-auto max-w-6xl">
+
 
         {/* Upcoming Events */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-accent">Upcoming Presentations</h2>
+          <h2 className="text-3xl font-bold mb-8 text-accent">Upcoming Events</h2>
           <div className="space-y-6">
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
@@ -40,9 +75,9 @@ export default function Events() {
           </div>
         </section>
 
-        {/* Recent Presentations */}
+        {/* Recent Events */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-accent">Recent Presentations</h2>
+          <h2 className="text-3xl font-bold mb-8 text-accent">Recent Events</h2>
           <div className="space-y-6">
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
@@ -87,7 +122,7 @@ export default function Events() {
           </div>
         </section>
 
-        {/* Video Presentations */}
+        {/* Video Events */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-accent">Featured Videos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -280,7 +315,8 @@ export default function Events() {
             ))}
           </div>
         </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 } 

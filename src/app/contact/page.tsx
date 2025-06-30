@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -40,6 +41,20 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
+            {/* Professional Photo */}
+            <div className="text-center">
+              <div className="aspect-[4/5] max-w-64 mx-auto border border-gray-700 rounded-lg overflow-hidden mb-4">
+                <Image
+                  src="/assets/images/profile/contactimage.jpg"
+                  alt="Dr. Bulelani Jili - Professional Portrait"
+                  width={256}
+                  height={320}
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="text-foreground/70 text-sm">Dr. Bulelani Jili</p>
+            </div>
             <div>
               <h2 className="text-3xl font-bold mb-6 text-accent">Contact Information</h2>
               <div className="space-y-6">
@@ -81,31 +96,12 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Research Interests */}
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-accent">Research Areas</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  'Africa-China Relations',
-                  'AI Governance',
-                  'Cybersecurity',
-                  'Digital Policy',
-                  'Surveillance Technology',
-                  'International Relations',
-                  'Tech Ethics',
-                  'Political Economy'
-                ].map((area) => (
-                  <div key={area} className="bg-gray-800/30 p-3 border border-gray-700 text-sm">
-                    {area}
-                  </div>
-                ))}
-              </div>
-            </div>
+
           </div>
 
           {/* Contact Form */}
           <div>
-            <h2 className="text-3xl font-bold mb-6 text-accent">Send a Message</h2>
+            <h2 className="text-3xl font-bold mb-6 text-accent">Contact Me</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>

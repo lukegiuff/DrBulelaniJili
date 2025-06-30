@@ -10,7 +10,7 @@ const Navigation = () => {
     { href: '/', label: 'HOME' },
     { href: '/about', label: 'ABOUT' },
     { href: '/publications', label: 'WORKS' },
-    { href: '/events', label: 'PRESENTATIONS' },
+    { href: '/events', label: 'EVENTS' },
     { href: '/news', label: 'UPDATES' },
     { href: '/contact', label: 'CONTACT' },
   ];
