@@ -125,175 +125,183 @@ export default function Events() {
         {/* Video Events */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-accent">Featured Videos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="group cursor-pointer">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            {/* Video 1 */}
+            <div className="group w-full">
               <a 
                 href="https://www.youtube.com/watch?time_continue=523&v=iFAIRpJZozQ" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block"
+                className="block w-full transition-transform duration-300 group-hover:scale-[1.02]"
               >
-                <div className="relative aspect-video border border-gray-700 group-hover:border-accent transition-all duration-300 overflow-hidden rounded-lg">
-                  {/* Video Thumbnail */}
-                  <Image
-                    src="/assets/images/videos/african-demand-chinese-surveillance.png"
-                    alt="African Demand for Chinese Surveillance Technology Video Thumbnail"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    className="transition-transform duration-300 group-hover:scale-105"
-                  />
-                  
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
-                  
-                  {/* Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-accent/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-accent transition-all duration-300 shadow-lg">
-                      <svg className="w-8 h-8 text-background ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
+                <div className="bg-gray-800/40 border border-gray-700 group-hover:border-accent rounded-lg overflow-hidden transition-all duration-300 w-full">
+                  {/* Video Thumbnail Container */}
+                  <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
+                    <Image
+                      src="/assets/images/videos/african-demand-chinese-surveillance.png"
+                      alt="African Demand for Chinese Surveillance Technology"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: 'cover' }}
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
+                    
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                    
+                    {/* Play Button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                        <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                   
-                  {/* Video Duration Badge */}
-                  <div className="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    Video
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                      African Demand for Chinese Surveillance Technology
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-3">The Africa-China Podcast</p>
+                    <span className="text-accent text-sm font-medium">Watch Video →</span>
                   </div>
-                </div>
-                
-                <div className="p-4 bg-gray-800/30 border border-gray-700 border-t-0 group-hover:border-accent transition-colors duration-300 rounded-b-lg">
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">African Demand for Chinese Surveillance Technology</h3>
-                  <p className="text-foreground/80 mb-2 text-sm">The Africa-China Podcast</p>
-                  <span className="text-accent text-sm font-medium">Watch Video →</span>
                 </div>
               </a>
             </div>
 
-            <div className="group cursor-pointer">
+            {/* Video 2 */}
+            <div className="group w-full">
               <a 
                 href="https://www.youtube.com/watch?time_continue=59&v=ODVCINHfrHY" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block"
+                className="block w-full transition-transform duration-300 group-hover:scale-[1.02]"
               >
-                <div className="relative aspect-video border border-gray-700 group-hover:border-accent transition-all duration-300 overflow-hidden rounded-lg">
-                  {/* Video Thumbnail */}
-                  <Image
-                    src="/assets/images/videos/the-china-global-south.png"
-                    alt="The China-Global South Conference Panel Video Thumbnail"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    className="transition-transform duration-300 group-hover:scale-105"
-                  />
-                  
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
-                  
-                  {/* Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-accent/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-accent transition-all duration-300 shadow-lg">
-                      <svg className="w-8 h-8 text-background ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
+                <div className="bg-gray-800/40 border border-gray-700 group-hover:border-accent rounded-lg overflow-hidden transition-all duration-300 w-full">
+                  {/* Video Thumbnail Container */}
+                  <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
+                    <Image
+                      src="/assets/images/videos/the-china-global-south.png"
+                      alt="The China-Global South Conference Panel"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: 'cover' }}
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
+                    
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                    
+                    {/* Play Button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                        <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                   
-                  {/* Video Duration Badge */}
-                  <div className="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    Video
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                      The China-Global South Conference Panel
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-3">Atlantic Council</p>
+                    <span className="text-accent text-sm font-medium">Watch Video →</span>
                   </div>
-                </div>
-                
-                <div className="p-4 bg-gray-800/30 border border-gray-700 border-t-0 group-hover:border-accent transition-colors duration-300 rounded-b-lg">
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">The China-Global South Conference Panel</h3>
-                  <p className="text-foreground/80 mb-2 text-sm">Atlantic Council</p>
-                  <span className="text-accent text-sm font-medium">Watch Video →</span>
                 </div>
               </a>
             </div>
 
-            <div className="group cursor-pointer">
+            {/* Video 3 */}
+            <div className="group w-full">
               <a 
                 href="https://www.youtube.com/watch?v=EHgqVJWBxtA" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block"
+                className="block w-full transition-transform duration-300 group-hover:scale-[1.02]"
               >
-                <div className="relative aspect-video border border-gray-700 group-hover:border-accent transition-all duration-300 overflow-hidden rounded-lg">
-                  {/* Video Thumbnail */}
-                  <Image
-                    src="/assets/images/videos/global-south-geopolitics-us-europe.png"
-                    alt="Global South, Geopolitics, and US, Europe, & China's Competition Video Thumbnail"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    className="transition-transform duration-300 group-hover:scale-105"
-                  />
-                  
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
-                  
-                  {/* Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-accent/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-accent transition-all duration-300 shadow-lg">
-                      <svg className="w-8 h-8 text-background ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
+                <div className="bg-gray-800/40 border border-gray-700 group-hover:border-accent rounded-lg overflow-hidden transition-all duration-300 w-full">
+                  {/* Video Thumbnail Container */}
+                  <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
+                    <Image
+                      src="/assets/images/videos/global-south-geopolitics-us-europe.png"
+                      alt="Global South, Geopolitics, and US, Europe, & China's Competition"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: 'cover' }}
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
+                    
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                    
+                    {/* Play Button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                        <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                   
-                  {/* Video Duration Badge */}
-                  <div className="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    Video
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                      Global South, Geopolitics, and US, Europe, & China&apos;s Competition
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-3">Berkman Klein Center</p>
+                    <span className="text-accent text-sm font-medium">Watch Video →</span>
                   </div>
-                </div>
-                
-                <div className="p-4 bg-gray-800/30 border border-gray-700 border-t-0 group-hover:border-accent transition-colors duration-300 rounded-b-lg">
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">Global South, Geopolitics, and US, Europe, & China&apos;s Competition</h3>
-                  <p className="text-foreground/80 mb-2 text-sm">Berkman Klein Center</p>
-                  <span className="text-accent text-sm font-medium">Watch Video →</span>
                 </div>
               </a>
             </div>
 
-            <div className="group cursor-pointer">
+            {/* Video 4 */}
+            <div className="group w-full">
               <a 
                 href="https://www.youtube.com/watch?v=etG6SKey2eA" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block"
+                className="block w-full transition-transform duration-300 group-hover:scale-[1.02]"
               >
-                <div className="relative aspect-video border border-gray-700 group-hover:border-accent transition-all duration-300 overflow-hidden rounded-lg">
-                  {/* Video Thumbnail */}
-                  <Image
-                    src="/assets/images/videos/africas-demand-for-and-adoption.png"
-                    alt="Africa's Demand for and Adoption of Chinese Surveillance Technologies Video Thumbnail"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    className="transition-transform duration-300 group-hover:scale-105"
-                  />
-                  
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
-                  
-                  {/* Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-accent/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-accent transition-all duration-300 shadow-lg">
-                      <svg className="w-8 h-8 text-background ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
+                <div className="bg-gray-800/40 border border-gray-700 group-hover:border-accent rounded-lg overflow-hidden transition-all duration-300 w-full">
+                  {/* Video Thumbnail Container */}
+                  <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
+                    <Image
+                      src="/assets/images/videos/africas-demand-for-and-adoption.png"
+                      alt="Africa's Demand for and Adoption of Chinese Surveillance Technologies"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: 'cover' }}
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
+                    
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                    
+                    {/* Play Button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                        <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                   
-                  {/* Video Duration Badge */}
-                  <div className="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    Video
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                      Africa&apos;s Demand for and Adoption of Chinese Surveillance Technologies
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-3">Lawfare</p>
+                    <span className="text-accent text-sm font-medium">Watch Video →</span>
                   </div>
-                </div>
-                
-                <div className="p-4 bg-gray-800/30 border border-gray-700 border-t-0 group-hover:border-accent transition-colors duration-300 rounded-b-lg">
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">Africa&apos;s Demand for and Adoption of Chinese Surveillance Technologies</h3>
-                  <p className="text-foreground/80 mb-2 text-sm">Lawfare</p>
-                  <span className="text-accent text-sm font-medium">Watch Video →</span>
                 </div>
               </a>
             </div>

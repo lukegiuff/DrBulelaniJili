@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Publications - Dr. Bulelani Jili',
-  description: 'Explore Dr. Bulelani Jili\'s academic publications, research papers, and scholarly contributions.',
+  title: 'Publications - Dr. Bulelani Jili | Chinese Surveillance Technology & AI Governance Research',
+  description: 'Comprehensive collection of Dr. Bulelani Jili\'s research on Chinese surveillance technology, Africa-China relations, AI governance, digital colonialism, and AI sovereignty. Published in Nature, The Economist, Georgetown Journal, and cited by US Congress.',
+  keywords: 'Dr. Bulelani Jili publications, Chinese surveillance technology research, Africa-China relations papers, AI governance studies, digital colonialism academic papers, AI sovereignty research, Chinese cybersecurity threat analysis, information communication technology development, Georgetown University publications, Harvard University research',
+  openGraph: {
+    title: 'Dr. Bulelani Jili Publications - Chinese Surveillance Technology Research',
+    description: 'Leading academic research on Chinese surveillance technology, Africa-China relations, AI governance, and digital colonialism. Published in top journals and cited by US Congress.',
+    images: ['/assets/images/profile/worksimage.jpg'],
+  },
+  alternates: {
+    canonical: 'https://bulelani-jili.com/publications',
+  },
 };
 
 export default function Publications() {

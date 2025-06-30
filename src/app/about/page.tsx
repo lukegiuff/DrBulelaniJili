@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'About - Dr. Bulelani Jili',
-  description: 'Learn more about Dr. Bulelani Jili, his academic background, research interests, and career achievements.',
+  title: 'About Dr. Bulelani Jili - Chinese Surveillance Technology & AI Governance Expert | Georgetown & Harvard',
+  description: 'Dr. Bulelani Jili is a leading expert in Chinese surveillance technology, Africa-China relations, AI governance, and digital colonialism. Assistant Professor at Georgetown University, Harvard fellow, specializing in Chinese cybersecurity threats and ICT development policy.',
+  keywords: 'Dr. Bulelani Jili, Chinese surveillance technology, Africa-China relations, AI governance, digital colonialism, AI sovereignty, Chinese cybersecurity threat, Georgetown University, Harvard University, information communication technology development, academic research, postcolonial theory',
+  openGraph: {
+    title: 'About Dr. Bulelani Jili - Chinese Surveillance Technology Expert',
+    description: 'Leading academic expert in Chinese surveillance technology, Africa-China relations, AI governance, and digital colonialism at Georgetown University and Harvard University.',
+    images: ['/assets/images/profile/aboutimage.jpg'],
+  },
+  alternates: {
+    canonical: 'https://bulelani-jili.com/about',
+  },
 };
 
 export default function About() {

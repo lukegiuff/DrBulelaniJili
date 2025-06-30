@@ -41,13 +41,14 @@ const Hero = () => {
               
               <div className="space-y-4 text-lg text-white/90 leading-relaxed max-w-2xl">
                 <p>
-                  Dr. Bulelani Jili is an Assistant Professor at Georgetown University, a Visiting Fellow at Yale Law School, 
-                  and a Fellow at New America. His research examines Africa-China relations, AI governance, cybersecurity, 
-                  postcolonial theory, and the political economy of emerging technologies.
+                  Dr. Bulelani Jili is an Assistant Professor at Georgetown University, Harvard University fellow, and Yale Law School 
+                  Visiting Fellow. His groundbreaking research examines Chinese surveillance technology, Africa-China relations, 
+                  AI governance, digital colonialism, AI sovereignty, and Chinese cybersecurity threats in the Global South.
                 </p>
                 <p>
-                  His work has appeared in African Affairs, Nature, Theory, Culture & Society, The Economist, 
-                  the Financial Times, and other scholarly and public-facing outlets.
+                  A leading expert in information and communication technology development, his work on Chinese surveillance technology 
+                  and AI governance has appeared in African Affairs, Nature, Theory, Culture & Society, The Economist, 
+                  the Financial Times, and other prestigious academic and policy outlets.
                 </p>
               </div>
 
