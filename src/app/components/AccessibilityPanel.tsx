@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const AccessibilityPanel = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,17 +10,7 @@ const AccessibilityPanel = () => {
     reducedMotion: false,
   });
 
-  useEffect(() => {
-    // Load saved settings from localStorage
-    const savedSettings = localStorage.getItem('accessibility-settings');
-    if (savedSettings) {
-      const parsed = JSON.parse(savedSettings);
-      setSettings(parsed);
-      applySettings(parsed);
-    }
-  }, []);
-
-  const applySettings = (newSettings: typeof settings) => {
+  const applySettings = useCallback((newSettings: typeof settings) => {
     const html = document.documentElement;
     
     if (newSettings.highContrast) {
@@ -40,7 +30,17 @@ const AccessibilityPanel = () => {
     } else {
       html.classList.remove('reduced-motion');
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    // Load saved settings from localStorage
+    const savedSettings = localStorage.getItem('accessibility-settings');
+    if (savedSettings) {
+      const parsed = JSON.parse(savedSettings);
+      setSettings(parsed);
+      applySettings(parsed);
+    }
+  }, [applySettings]);
 
   const updateSetting = (key: keyof typeof settings) => {
     const newSettings = { ...settings, [key]: !settings[key] };

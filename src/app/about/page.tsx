@@ -28,7 +28,7 @@ export default function About() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/images/profile/aboutimage.jpg"
-            alt="Professional academic setting representing Dr. Bulelani Jili's scholarly work in international relations"
+            alt="Professional academic setting representing Dr. Bulelani Jili&apos;s scholarly work in international relations"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
             priority
@@ -76,7 +76,7 @@ export default function About() {
               He is also a visiting fellow at Yale Law School, a former fellow at the Atlantic Council, and a former cybersecurity fellow 
               at the Belfer Center at Harvard University. He also conducted research for the China, Law, and Development project at Oxford University. 
               The European Research Council funds the 5-year interdisciplinary and multi-sited research project, which seeks to comprehend 
-              the underlying order of China&rsquo;s new globalism.
+              the underlying order of China&apos;s new globalism.
             </p>
 
             <p>
@@ -103,7 +103,7 @@ export default function About() {
                 </svg>
                 <h3 className="text-xl sm:text-2xl font-bold mb-2">Curriculum Vitae</h3>
                 <p className="text-sm sm:text-base text-foreground/70">
-                  Download Dr. Jili&rsquo;s complete academic CV including education, research experience, 
+                  Download Dr. Jili&apos;s complete academic CV including education, research experience, 
                   publications, presentations, and professional affiliations.
                 </p>
               </div>
@@ -120,7 +120,7 @@ export default function About() {
                 Download CV (PDF)
               </a>
               <span id="cv-description" className="sr-only">
-                Downloads Dr. Bulelani Jili's curriculum vitae as a PDF file
+                Downloads Dr. Bulelani Jili&apos;s curriculum vitae as a PDF file
               </span>
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function About() {
               </article>
               <article className="border-l-2 border-accent pl-4 sm:pl-6" role="listitem">
                 <h3 className="text-lg sm:text-xl font-semibold mb-2">M.Phil., Cambridge University (UK)</h3>
-                <p className="text-sm sm:text-base text-foreground/60">Standard Bank Africa Chairman&rsquo;s Scholar</p>
+                <p className="text-sm sm:text-base text-foreground/60">Standard Bank Africa Chairman&apos;s Scholar</p>
               </article>
               <article className="border-l-2 border-accent pl-4 sm:pl-6" role="listitem">
                 <h3 className="text-lg sm:text-xl font-semibold mb-2">M.A. in Economics, Peking University (China)</h3>

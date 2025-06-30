@@ -229,7 +229,7 @@ export default function Events() {
                   <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
                     <Image
                       src="/assets/images/videos/global-south-geopolitics-us-europe.png"
-                      alt="Global South, Geopolitics, and US, Europe, & China's Competition"
+                      alt="Global South, Geopolitics, and US, Europe, &amp; China&apos;s Competition"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       style={{ objectFit: 'cover' }}
@@ -274,7 +274,7 @@ export default function Events() {
                   <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio */}
                     <Image
                       src="/assets/images/videos/africas-demand-for-and-adoption.png"
-                      alt="Africa's Demand for and Adoption of Chinese Surveillance Technologies"
+                      alt="Africa&apos;s Demand for and Adoption of Chinese Surveillance Technologies"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       style={{ objectFit: 'cover' }}

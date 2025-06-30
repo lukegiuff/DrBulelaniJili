@@ -59,7 +59,7 @@ const Hero = () => {
                     LEARN MORE
                   </Link>
                   <span id="learn-more-description" className="sr-only">
-                    Navigate to the about page to learn more about Dr. Bulelani Jili&rsquo;s academic background and research
+                    Navigate to the about page to learn more about Dr. Bulelani Jili&apos;s academic background and research
                   </span>
                   
                   <Link 
@@ -253,7 +253,7 @@ const Hero = () => {
                 <span className="text-accent font-medium text-sm">2022</span>
               </div>
               <p className="text-accent mb-2">Asia Policy</p>
-              <p className="text-foreground/80 text-sm">Examination of Chinese information and communication technology investments in Kenya's smart city development.</p>
+              <p className="text-foreground/80 text-sm">Examination of Chinese information and communication technology investments in Kenya&apos;s smart city development.</p>
             </div>
           </div>
 
@@ -288,7 +288,7 @@ const Hero = () => {
 
             <div className="bg-gray-800/30 p-6 border border-gray-700 hover:border-accent transition-colors duration-200">
               <div className="text-accent text-sm font-medium mb-2">APRIL 2025</div>
-              <h3 className="text-lg font-semibold mb-3">African Agency Amid China&rsquo;s Digital Footprint</h3>
+              <h3 className="text-lg font-semibold mb-3">African Agency Amid China&apos;s Digital Footprint</h3>
               <p className="text-foreground/80 text-sm mb-4">Georgetown University, Washington, DC</p>
               <p className="text-foreground/60 text-xs">Exploring the balance between dependency and independence in Africa-China digital relations.</p>
             </div>
