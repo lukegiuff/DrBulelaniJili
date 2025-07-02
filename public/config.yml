@@ -1,8 +1,13 @@
 backend:
-  name: test-repo
+  name: git-gateway
+  branch: master
 
-# Enable local backend for development
+# Enable local backend for development  
 local_backend: true
+
+# Auto-login configuration
+site_url: "https://bulelaniijili.com"
+display_url: "https://bulelaniijili.com"
 
 media_folder: "public/assets/images"
 public_folder: "/assets/images"
