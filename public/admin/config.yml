@@ -1,7 +1,5 @@
 backend:
-  name: github
-  repo: lukegiuff/DrBulelaniJili
-  branch: master
+  name: test-repo
 
 # Enable local backend for development
 local_backend: true
