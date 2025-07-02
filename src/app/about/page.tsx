@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: ['/assets/images/profile/aboutimage.jpg'],
     },
     alternates: {
-      canonical: 'https://bulelani-jili.com/about',
+      canonical: 'https://bulelanijili.com/about',
     },
   };
 }

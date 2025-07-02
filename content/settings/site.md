@@ -1,7 +1,7 @@
 ---
 title: "Dr. Bulelani Jili - Georgetown University Professor & Harvard Fellow"
 description: "Dr. Bulelani Jili is a leading expert in Chinese surveillance technology, Africa-China relations, AI governance, and digital colonialism. Assistant Professor at Georgetown University and Harvard fellow."
-url: "https://bulelani-jili.com"
+url: "https://bulelanijili.com"
 author: "Dr. Bulelani Jili"
 footer: "© 2025 Dr. Bulelani Jili. All rights reserved."
 navigation:

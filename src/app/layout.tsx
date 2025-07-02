@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "Leading scholar in Chinese surveillance technology, Africa-China relations, AI governance, and digital colonialism. Georgetown University Assistant Professor and Harvard University fellow.",
     type: "website",
     locale: "en_US",
-    url: "https://bulelani-jili.com",
+    url: "https://bulelanijili.com",
     siteName: "Dr. Bulelani Jili",
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     images: ["/assets/images/profile/hero-image.png"],
   },
   alternates: {
-    canonical: "https://bulelani-jili.com",
+    canonical: "https://bulelanijili.com",
   },
   other: {
     "google-site-verification": "your-google-verification-code",
@@ -83,8 +83,8 @@ export default function RootLayout({
       "Cybersecurity Policy",
       "Postcolonial Theory"
     ],
-    "url": "https://bulelani-jili.com",
-    "image": "https://bulelani-jili.com/assets/images/profile/hero-image.png",
+    "url": "https://bulelanijili.com",
+    "image": "https://bulelanijili.com/assets/images/profile/hero-image.png",
     "sameAs": [
       "https://georgetown.edu",
       "https://harvard.edu"

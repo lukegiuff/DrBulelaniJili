@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     images: ['/assets/images/profile/worksimage.jpg'],
   },
   alternates: {
-    canonical: 'https://bulelani-jili.com/publications',
+    canonical: 'https://bulelanijili.com/publications',
   },
 };
 

@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: lukegiuff/DrBulelaniJili
   branch: master
 
 # Enable local backend for development  
