@@ -155,7 +155,7 @@ function loadMarkdownDirectory<T>(dirPath: string): (T & { slug: string })[] {
           slug
         };
       })
-      .sort((a: any, b: any) => {
+      .sort((a: T & { slug: string; date?: string; order?: number }, b: T & { slug: string; date?: string; order?: number }) => {
         // Sort by date if available, newest first
         if (a.date && b.date) {
           return new Date(b.date).getTime() - new Date(a.date).getTime();

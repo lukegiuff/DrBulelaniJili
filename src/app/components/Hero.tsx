@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getHeroContent, getHighlights, type HeroContent, type HighlightContent } from '@/lib/content';
+import { type HeroContent, type HighlightContent } from '@/lib/content';
 
 interface HeroProps {
   heroContent: HeroContent;
@@ -118,7 +118,7 @@ const Hero = ({ heroContent, highlights }: HeroProps) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8" role="list">
-            {highlights.map((highlight, index) => (
+            {highlights.map((highlight) => (
               <article key={highlight.title} className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
                 <time className="text-accent text-sm font-medium mb-2 block" dateTime={highlight.date}>{highlight.date}</time>
                 <h3 className="text-base sm:text-lg font-semibold mb-3">{highlight.title}</h3>

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import ReactMarkdown from 'react-markdown';
 import { getAboutContent } from '@/lib/content';
 
 export async function generateMetadata(): Promise<Metadata> {
