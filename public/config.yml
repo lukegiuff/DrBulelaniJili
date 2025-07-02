@@ -2,6 +2,9 @@ backend:
   name: github
   repo: lukegiuff/DrBulelaniJili
   branch: master
+  base_url: https://bulelanijili.com
+  auth_endpoint: /authorize
+  token_endpoint: /token
 
 # Enable local backend for development  
 local_backend: true
