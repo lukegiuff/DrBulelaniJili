@@ -2,7 +2,7 @@ backend:
   name: github
   repo: lukegiuff/DrBulelaniJili
   branch: master
-  base_url: https://decap-proxy-bulelanjili.gjuffa88.workers.dev
+  base_url: https://decap-proxy-bulelanjili.giuffa88.workers.dev
   auth_endpoint: /auth
 
 # Enable local backend for development  
