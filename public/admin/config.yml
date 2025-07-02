@@ -1,12 +1,13 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: lukegiuff/DrBulelaniJili
   branch: master
 
 # Enable local backend for development  
 local_backend: true
 
-# Netlify Identity configuration
-site_url: "https://drbulelanijili.netlify.app"
+# Site configuration
+site_url: "https://bulelanijili.com"
 display_url: "https://bulelanijili.com"
 
 media_folder: "public/assets/images"
