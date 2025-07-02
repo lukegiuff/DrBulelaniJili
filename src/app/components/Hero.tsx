@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getHeroContent, getHighlights, type HeroContent, type HighlightContent } from '@/lib/content';
 
-const Hero = () => {
+interface HeroProps {
+  heroContent: HeroContent;
+  highlights: HighlightContent[];
+}
+
+const Hero = ({ heroContent, highlights }: HeroProps) => {
   return (
     <>
       {/* Main Hero Section */}
@@ -30,22 +36,18 @@ const Hero = () => {
             <div className="space-y-6 sm:space-y-8">
               <div className="space-y-3 sm:space-y-4">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight text-white">
-                  EXPERT.<br />
-                  SCHOLAR.<br />
-                  <span className="text-accent">PROFESSOR.</span>
+                  {heroContent.title1}<br />
+                  {heroContent.title2}<br />
+                  <span className="text-accent">{heroContent.title3}</span>
                 </h1>
               </div>
               
               <div className="space-y-4 sm:space-y-5">
                 <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-xl">
-                  Dr. Bulelani Jili is an Assistant Professor at Georgetown University, Harvard University fellow, and Yale Law School 
-                  Visiting Fellow. His groundbreaking research examines Chinese surveillance technology, Africa-China relations, 
-                  AI governance, digital colonialism, AI sovereignty, and Chinese cybersecurity threats in the Global South.
+                  {heroContent.description1}
                 </p>
                 <p className="hidden md:block text-sm sm:text-base md:text-lg text-white/80 leading-relaxed max-w-2xl">
-                  A leading expert in information and communication technology development, his work on Chinese surveillance technology 
-                  and AI governance has appeared in African Affairs, Nature, Theory, Culture &amp; Society, The Economist, 
-                  the Financial Times, and other prestigious academic and policy outlets.
+                  {heroContent.description2}
                 </p>
               </div>
 
@@ -55,7 +57,7 @@ const Hero = () => {
                     href="/about"
                     className="inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-accent text-white font-medium hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200 text-sm sm:text-base"
                   >
-                    ABOUT DR. JILI
+                    {heroContent.primaryButton}
                   </Link>
                   
                   <Link 
@@ -63,7 +65,7 @@ const Hero = () => {
                     className="inline-flex items-center justify-center px-6 sm:px-8 py-3 border border-accent text-accent font-medium hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200 text-sm sm:text-base"
                     aria-describedby="contact-description"
                   >
-                    GET IN TOUCH
+                    {heroContent.secondaryButton}
                   </Link>
                   <span id="contact-description" className="sr-only">
                     Navigate to the contact page to send a message or inquire about collaboration
@@ -73,13 +75,14 @@ const Hero = () => {
 
               {/* Awards Section */}
               <div className="pt-4 sm:pt-6 space-y-2">
-                <div className="text-xs sm:text-sm text-accent font-medium uppercase tracking-wide">Recent Recognition</div>
+                <div className="text-xs sm:text-sm text-accent font-medium uppercase tracking-wide">{heroContent.recognitionText}</div>
                 <div className="text-xs sm:text-sm text-white/70 leading-relaxed">
-                  <span className="block sm:inline">Google Public Policy Fellow</span>
-                  <span className="hidden sm:inline"> • </span>
-                  <span className="block sm:inline">International Strategy Forum Fellowship</span>
-                  <span className="hidden sm:inline"> • </span>
-                  <span className="block sm:inline">Meta Research PhD Fellowship</span>
+                  {heroContent.recognition.map((item, index) => (
+                    <span key={index}>
+                      <span className="block sm:inline">{item.item}</span>
+                      {index < heroContent.recognition.length - 1 && <span className="hidden sm:inline"> • </span>}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -115,42 +118,20 @@ const Hero = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8" role="list">
-            <article className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
-              <time className="text-accent text-sm font-medium mb-2 block" dateTime="2025-05">MAY 2025</time>
-              <h3 className="text-base sm:text-lg font-semibold mb-3">Africanising Chinese Surveillance Technology</h3>
-              <p className="text-foreground/80 text-sm mb-4 leading-relaxed">Featured analysis in East Asia Forum on how African nations are adapting Chinese surveillance technologies to local contexts.</p>
-              <Link 
-                href="/news" 
-                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200 inline-block"
-              >
-                Read Analysis →
-              </Link>
-            </article>
-
-            <article className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
-              <time className="text-accent text-sm font-medium mb-2 block" dateTime="2024">2024</time>
-              <h3 className="text-base sm:text-lg font-semibold mb-3">International Strategy Forum Fellowship</h3>
-              <p className="text-foreground/80 text-sm mb-4 leading-relaxed">Awarded prestigious fellowship recognizing excellence in international affairs research and policy impact.</p>
-              <Link 
-                href="/about" 
-                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200 inline-block"
-              >
-                View Fellowship Details →
-              </Link>
-            </article>
-
-            <article className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
-              <time className="text-accent text-sm font-medium mb-2 block" dateTime="2023">2023</time>
-              <h3 className="text-base sm:text-lg font-semibold mb-3">Congressional Citation</h3>
-              <p className="text-foreground/80 text-sm mb-4 leading-relaxed">Research on Chinese surveillance technology cited by US Congress Committee on Homeland Security and Congressional-Executive Commission on China.</p>
-              <Link 
-                href="/publications" 
-                className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200 inline-block"
-                aria-label="View publications related to Congressional Citation"
-              >
-                View Publications →
-              </Link>
-            </article>
+            {highlights.map((highlight, index) => (
+              <article key={highlight.title} className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700 hover:border-accent transition-colors duration-200" role="listitem">
+                <time className="text-accent text-sm font-medium mb-2 block" dateTime={highlight.date}>{highlight.date}</time>
+                <h3 className="text-base sm:text-lg font-semibold mb-3">{highlight.title}</h3>
+                <p className="text-foreground/80 text-sm mb-4 leading-relaxed">{highlight.description}</p>
+                <Link 
+                  href={highlight.linkUrl} 
+                  className="text-accent text-sm font-medium hover:text-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-800 rounded-sm px-1 py-1 transition-all duration-200 inline-block"
+                  aria-label={`${highlight.linkText} for ${highlight.title}`}
+                >
+                  {highlight.linkText}
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>

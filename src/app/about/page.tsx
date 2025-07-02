@@ -1,21 +1,28 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
+import { getAboutContent } from '@/lib/content';
 
-export const metadata: Metadata = {
-  title: 'About Dr. Bulelani Jili - Chinese Surveillance Technology & AI Governance Expert | Georgetown & Harvard',
-  description: 'Dr. Bulelani Jili is a leading expert in Chinese surveillance technology, Africa-China relations, AI governance, and digital colonialism. Assistant Professor at Georgetown University, Harvard fellow, specializing in Chinese cybersecurity threats and ICT development policy.',
-  keywords: 'Dr. Bulelani Jili, Chinese surveillance technology, Africa-China relations, AI governance, digital colonialism, AI sovereignty, Chinese cybersecurity threat, Georgetown University, Harvard University, information communication technology development, academic research, postcolonial theory',
-  openGraph: {
-    title: 'About Dr. Bulelani Jili - Chinese Surveillance Technology Expert',
-    description: 'Leading academic expert in Chinese surveillance technology, Africa-China relations, AI governance, and digital colonialism at Georgetown University and Harvard University.',
-    images: ['/assets/images/profile/aboutimage.jpg'],
-  },
-  alternates: {
-    canonical: 'https://bulelani-jili.com/about',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const aboutContent = getAboutContent();
+  
+  return {
+    title: aboutContent.title,
+    description: aboutContent.description,
+    keywords: aboutContent.keywords,
+    openGraph: {
+      title: aboutContent.title,
+      description: aboutContent.description,
+      images: ['/assets/images/profile/aboutimage.jpg'],
+    },
+    alternates: {
+      canonical: 'https://bulelani-jili.com/about',
+    },
+  };
+}
 
 export default function About() {
+  const aboutContent = getAboutContent();
   return (
     <>
       {/* Hero Section */}
@@ -52,9 +59,9 @@ export default function About() {
               {/* Quote Section */}
               <div className="space-y-4">
                 <blockquote className="text-lg sm:text-2xl lg:text-4xl font-light italic text-white/95 leading-relaxed">
-                  &ldquo;He writes the most insightful work on these issues.&rdquo;
+                  &ldquo;{aboutContent.heroQuote}&rdquo;
                 </blockquote>
-                <cite className="text-base sm:text-xl text-accent font-medium">– Eric Olander</cite>
+                <cite className="text-base sm:text-xl text-accent font-medium">– {aboutContent.quoteAttribution}</cite>
               </div>
             </div>
           </div>
@@ -64,35 +71,17 @@ export default function About() {
       {/* Main Content */}
       <div className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="space-y-6 sm:space-y-8 text-base sm:text-lg leading-relaxed text-foreground/80">
-            <p>
-              Dr. Bulelani Jili is an assistant professor at Georgetown University, Edmund A. Walsh School of Foreign Service, 
-              where he is part of the African Studies Program and an affiliate of the Science, Technology, and International Affairs (STIA) Program. 
-              His research interests include Africa-China relations, cybersecurity, ICT development, African political economy, internet policy, 
-              Chinese business law, law and development, and privacy law.
-            </p>
-
-            <p>
-              He is also a visiting fellow at Yale Law School, a former fellow at the Atlantic Council, and a former cybersecurity fellow 
-              at the Belfer Center at Harvard University. He also conducted research for the China, Law, and Development project at Oxford University. 
-              The European Research Council funds the 5-year interdisciplinary and multi-sited research project, which seeks to comprehend 
-              the underlying order of China&apos;s new globalism.
-            </p>
-
-            <p>
-              He has also advised leading think tanks, governments, firms, and watchdogs such as the American Bar Association, OpenAI, 
-              the French government, Freedom House, the UK&apos;s Foreign, Commonwealth & Development Office, the US State Department, 
-              the United Nations, and the Center for Strategic and International Studies.
-            </p>
-
-            <p>
-              His writing has appeared in leading think tanks and journals around the world, including African Affairs, Nature, 
-              Theory, Culture & Society, Mail & Guardian, Africa is a Country, The Elephant, South China Morning Post, 
-              African Centre for Strategic Studies, Politico, Lawfare, Tech Policy Press, The Economist, and Financial Times. 
-              He is also a regular panelist and speaker at international conferences, including those in South Africa, South Korea, 
-              India, Switzerland, and Australia.
-            </p>
-          </div>
+                  <div className="space-y-6 sm:space-y-8 text-base sm:text-lg leading-relaxed text-foreground/80">
+          {aboutContent.body
+            .replace(/\r\n/g, '\n') // Normalize Windows line endings to Unix
+            .split(/\n\n+/) // Split on two or more line breaks
+            .filter(paragraph => paragraph.trim())
+            .map((paragraph, index) => (
+              <p key={index}>
+                {paragraph.replace(/\n/g, ' ').trim()}
+              </p>
+            ))}
+        </div>
 
           {/* CV Download Section */}
           <div className="mt-12 sm:mt-16">
@@ -129,18 +118,9 @@ export default function About() {
           <section className="mt-12 sm:mt-16" aria-labelledby="research-areas-heading">
             <h2 id="research-areas-heading" className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-accent">Research Areas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3" role="list">
-              {[
-                'Africa-China Relations',
-                'AI Governance',
-                'Cybersecurity',
-                'Digital Policy',
-                'Surveillance Technology',
-                'International Relations',
-                'Tech Ethics',
-                'Political Economy'
-              ].map((area) => (
-                <div key={area} className="bg-gray-800/30 p-3 border border-gray-700 text-xs sm:text-sm text-center leading-relaxed" role="listitem">
-                  {area}
+              {aboutContent.researchAreas.map((researchArea) => (
+                <div key={researchArea.area} className="bg-gray-800/30 p-3 border border-gray-700 text-xs sm:text-sm text-center leading-relaxed" role="listitem">
+                  {researchArea.area}
                 </div>
               ))}
             </div>
@@ -150,22 +130,12 @@ export default function About() {
           <section className="mt-12 sm:mt-16" aria-labelledby="education-heading">
             <h2 id="education-heading" className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-accent">Education</h2>
             <div className="space-y-4 sm:space-y-6" role="list">
-              <article className="border-l-2 border-accent pl-4 sm:pl-6" role="listitem">
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">Ph.D., Harvard University</h3>
-                <p className="text-sm sm:text-base text-foreground/60">Doctoral studies in African political economy and international relations</p>
-              </article>
-              <article className="border-l-2 border-accent pl-4 sm:pl-6" role="listitem">
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">M.Phil., Cambridge University (UK)</h3>
-                <p className="text-sm sm:text-base text-foreground/60">Standard Bank Africa Chairman&apos;s Scholar</p>
-              </article>
-              <article className="border-l-2 border-accent pl-4 sm:pl-6" role="listitem">
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">M.A. in Economics, Peking University (China)</h3>
-                <p className="text-sm sm:text-base text-foreground/60">Yenching Scholarship recipient, Yenching Academy</p>
-              </article>
-              <article className="border-l-2 border-accent pl-4 sm:pl-6" role="listitem">
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">A.B. with honors in Philosophy, Politics, and Economics</h3>
-                <p className="text-sm sm:text-base text-foreground/60">Wesleyan University (CT), College of Social Studies, Pfeiffer Scholar</p>
-              </article>
+              {aboutContent.education.map((edu, index) => (
+                <article key={index} className="border-l-2 border-accent pl-4 sm:pl-6" role="listitem">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2">{edu.degree}</h3>
+                  <p className="text-sm sm:text-base text-foreground/60">{edu.description}</p>
+                </article>
+              ))}
             </div>
           </section>
 
@@ -173,30 +143,14 @@ export default function About() {
           <section className="mt-12 sm:mt-16" aria-labelledby="awards-heading">
             <h2 id="awards-heading" className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-accent">Recent Awards & Fellowships</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6" role="list">
-              <article className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700" role="listitem">
-                <h3 className="text-base sm:text-lg font-semibold text-accent mb-2">
-                  <time dateTime="2024">2024</time>
-                </h3>
-                <p className="text-sm sm:text-base">International Strategy Forum Fellowship</p>
-              </article>
-              <article className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700" role="listitem">
-                <h3 className="text-base sm:text-lg font-semibold text-accent mb-2">
-                  <time dateTime="2023">2023</time>
-                </h3>
-                <p className="text-sm sm:text-base">Google Public Policy Fellow</p>
-              </article>
-              <article className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700" role="listitem">
-                <h3 className="text-base sm:text-lg font-semibold text-accent mb-2">
-                  <time dateTime="2022">2022</time>
-                </h3>
-                <p className="text-sm sm:text-base">Meta Research PhD Fellowship Award</p>
-              </article>
-              <article className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700" role="listitem">
-                <h3 className="text-base sm:text-lg font-semibold text-accent mb-2">
-                  <time dateTime="2022">2022</time>
-                </h3>
-                <p className="text-sm sm:text-base">Wenner-Gren Foundation Fellowship</p>
-              </article>
+              {aboutContent.awards.map((award, index) => (
+                <article key={index} className="bg-gray-800/30 p-4 sm:p-6 border border-gray-700" role="listitem">
+                  <h3 className="text-base sm:text-lg font-semibold text-accent mb-2">
+                    <time dateTime={award.year}>{award.year}</time>
+                  </h3>
+                  <p className="text-sm sm:text-base">{award.award}</p>
+                </article>
+              ))}
             </div>
           </section>
         </div>
