@@ -1,10 +1,16 @@
-import { randomBytes } from 'node:crypto';
 import { OAuthClient } from './oauth';
 
 interface Env {
 	GITHUB_OAUTH_ID: string;
 	GITHUB_OAUTH_SECRET: string;
 }
+
+// Generate random state for OAuth using Web Crypto API (Cloudflare Workers compatible)
+const generateRandomState = () => {
+	const array = new Uint8Array(4);
+	crypto.getRandomValues(array);
+	return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
+};
 
 const createOAuth = (env: Env) => {
 	return new OAuthClient({
@@ -28,7 +34,7 @@ const handleAuth = async (url: URL, env: Env) => {
 	const authorizationUri = oauth2.authorizeURL({
 		redirect_uri: `https://${url.hostname}/callback?provider=github`,
 		scope: 'public_repo,user',
-		state: randomBytes(4).toString('hex'),
+		state: generateRandomState(),
 	});
 
 	return new Response(null, { headers: { location: authorizationUri }, status: 301 });

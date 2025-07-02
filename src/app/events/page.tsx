@@ -14,7 +14,7 @@ export default function Events() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/images/profile/eventsimage.jpg"
+            src="/assets/images/profile/eventsimage.png"
             alt="Dr. Bulelani Jili - Events Background"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
