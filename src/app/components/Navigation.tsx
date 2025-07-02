@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
@@ -37,10 +38,17 @@ const Navigation = () => {
             {/* Logo */}
             <Link 
               href="/" 
-              className="text-lg sm:text-xl lg:text-2xl font-bold text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded-sm transition-all duration-200 py-2"
+              className="flex items-center focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-transparent rounded-sm transition-all duration-200 py-2"
               aria-label="Dr. Bulelani Jili - Homepage"
             >
-              DR. BULELANI JILI
+              <Image
+                src="/assets/images/logos/Dr.-Bulelani-Jili-1.png"
+                alt="Dr. Bulelani Jili Logo"
+                width={140}
+                height={45}
+                className="h-9 sm:h-11 w-auto"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation Links */}
