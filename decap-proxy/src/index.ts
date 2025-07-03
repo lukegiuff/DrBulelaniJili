@@ -30,6 +30,22 @@ const handleAuth = async (url: URL, env: Env) => {
 		return new Response('Invalid provider', { status: 400 });
 	}
 
+	// Debug: Check if environment variables are being read
+	const debugEnv = {
+		hasClientId: !!env.OAUTH_CLIENT_ID,
+		hasClientSecret: !!env.OAUTH_CLIENT_SECRET,
+		clientIdLength: env.OAUTH_CLIENT_ID ? env.OAUTH_CLIENT_ID.length : 0,
+		clientIdPreview: env.OAUTH_CLIENT_ID ? env.OAUTH_CLIENT_ID.substring(0, 4) + '...' : 'MISSING'
+	};
+
+	// If no client ID, return debug info instead of continuing
+	if (!env.OAUTH_CLIENT_ID) {
+		return new Response(`Missing OAUTH_CLIENT_ID!\nDebug: ${JSON.stringify(debugEnv, null, 2)}`, {
+			status: 500,
+			headers: { 'Content-Type': 'text/plain' }
+		});
+	}
+
 	const oauth2 = createOAuth(env);
 	const authorizationUri = oauth2.authorizeURL({
 		redirect_uri: `https://${url.hostname}/callback?provider=github`,
