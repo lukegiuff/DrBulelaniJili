@@ -13,7 +13,7 @@ description2: A leading expert in information and communication technology
   the Financial Times, and other prestigious academic and policy outlets.
 primaryButton: ABOUT DR. JILI
 secondaryButton: GET IN TOUCH
-recognitionText: Recent Recognition!!!!!!
+recognitionText: Recent Recognition
 recognition:
   - item: Google Public Policy Fellow
   - item: International Strategy Forum Fellowship
