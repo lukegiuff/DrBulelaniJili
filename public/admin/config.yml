@@ -6,7 +6,7 @@ backend:
   auth_endpoint: /auth
 
 # Enable local backend for development  
-local_backend: true
+local_backend: false
 
 # Site configuration
 site_url: "https://bulelanijili.com"
