@@ -35,11 +35,7 @@ const handleAuth = async (url: URL, env: Env) => {
 		hasClientId: !!env.OAUTH_CLIENT_ID,
 		hasClientSecret: !!env.OAUTH_CLIENT_SECRET,
 		clientIdLength: env.OAUTH_CLIENT_ID ? env.OAUTH_CLIENT_ID.length : 0,
-		clientIdPreview: env.OAUTH_CLIENT_ID ? env.OAUTH_CLIENT_ID.substring(0, 4) + '...' : 'MISSING',
-		// Additional debugging
-		envKeys: Object.keys(env),
-		envType: typeof env,
-		envStringified: JSON.stringify(env, null, 2)
+		clientIdPreview: env.OAUTH_CLIENT_ID ? env.OAUTH_CLIENT_ID.substring(0, 4) + '...' : 'MISSING'
 	};
 
 	// If no client ID, return debug info instead of continuing
@@ -48,9 +44,6 @@ const handleAuth = async (url: URL, env: Env) => {
 
 Debug Environment Info:
 ${JSON.stringify(debugEnv, null, 2)}
-
-Raw Environment:
-${JSON.stringify(env, null, 2)}
 `, {
 			status: 500,
 			headers: { 'Content-Type': 'text/plain' }
