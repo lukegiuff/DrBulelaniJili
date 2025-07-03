@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: lukegiuff/DrBulelaniJili
+  repo: lukegiuff/nextjs-app
   branch: master
   base_url: https://decap-proxy-bulelanijili.giuffa88.workers.dev
   auth_endpoint: /auth
