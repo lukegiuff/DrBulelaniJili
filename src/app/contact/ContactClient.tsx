@@ -13,6 +13,10 @@ export default function ContactClient() {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+  const [submitMessage, setSubmitMessage] = useState('');
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -20,10 +24,53 @@ export default function ContactClient() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message. Dr. Jili will get back to you soon.');
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE',
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          subject: 'New Contact Form Submission from Dr. Bulelani Jili Website',
+          from_name: 'Dr. Bulelani Jili Website',
+          to: 'bulelanijili@g.harvard.edu'
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setSubmitMessage('Thank you for your message! Dr. Jili will get back to you soon.');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          howDidYouHear: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -91,6 +138,18 @@ export default function ContactClient() {
             {/* Contact Form */}
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-accent">Contact Me</h2>
+              
+              {/* Status Messages */}
+              {submitStatus && (
+                <div className={`mb-6 p-4 rounded-lg ${
+                  submitStatus === 'success' 
+                    ? 'bg-green-900/30 border border-green-600 text-green-400' 
+                    : 'bg-red-900/30 border border-red-600 text-red-400'
+                }`}>
+                  {submitMessage}
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6" noValidate>
                 <fieldset className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <legend className="sr-only">Personal Information</legend>
@@ -105,7 +164,8 @@ export default function ContactClient() {
                       required
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 text-sm sm:text-base"
+                      disabled={isSubmitting}
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 text-sm sm:text-base disabled:opacity-50"
                     />
                   </div>
                   <div>
@@ -119,7 +179,8 @@ export default function ContactClient() {
                       required
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 text-sm sm:text-base"
+                      disabled={isSubmitting}
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 text-sm sm:text-base disabled:opacity-50"
                     />
                   </div>
                 </fieldset>
@@ -134,7 +195,22 @@ export default function ContactClient() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 text-sm sm:text-base"
+                    disabled={isSubmitting}
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 text-sm sm:text-base disabled:opacity-50"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium mb-2 text-foreground">
+                    Phone Number (Optional)
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    disabled={isSubmitting}
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 text-sm sm:text-base disabled:opacity-50"
                   />
                 </div>
                 <div>
@@ -148,15 +224,17 @@ export default function ContactClient() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
+                    disabled={isSubmitting}
                     placeholder="Please describe your inquiry, collaboration proposal, media request, or any questions you may have..."
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 resize-vertical text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/30 border border-gray-700 rounded focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-200 resize-vertical text-sm sm:text-base disabled:opacity-50"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-accent text-background font-medium rounded hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-all duration-200 text-sm sm:text-base"
+                  disabled={isSubmitting}
+                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-accent text-background font-medium rounded hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-all duration-200 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
