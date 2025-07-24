@@ -51,4 +51,4 @@ He has also advised leading think tanks, governments, firms, and watchdogs such 
 
 His writing has appeared in leading think tanks and journals around the world, including African Affairs, Nature, Theory, Culture & Society, Mail & Guardian, Africa is a Country, The Elephant, South China Morning Post, African Centre for Strategic Studies, Politico, Lawfare, Tech Policy Press, and The Economist. He is also a regular panelist and speaker at international conferences, including those in South Africa, South Korea, India, Switzerland, and Australia. 
 
-His current book project, Digital Sovereignty in Postcolonial Africa: The Spread of Chinese Surveillance Tools and the Leasing of African Sovereignty, with Stanford University Press, draws on two years of ethnographic fieldwork conducted in Nairobi.
+His current book project, "Digital Sovereignty in Postcolonial Africa: The Spread of Chinese Surveillance Tools and the Leasing of African Sovereignty", with Stanford University Press, draws on two years of ethnographic fieldwork conducted in Nairobi.
