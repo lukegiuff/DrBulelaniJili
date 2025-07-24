@@ -10,7 +10,7 @@ description1: Dr. Bulelani Jili is an Assistant Professor at Georgetown
 description2: A leading expert in information and communication technology
   development, his work on Chinese surveillance technology and AI governance has
   appeared in African Affairs, Nature, Theory, Culture & Society, The Economist,
-  the Financial Times, and other prestigious academic and policy outlets.
+  and other prestigious academic and policy outlets.
 primaryButton: ABOUT DR. JILI
 secondaryButton: GET IN TOUCH
 recognitionText: Recent Recognition
