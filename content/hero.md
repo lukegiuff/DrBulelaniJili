@@ -3,7 +3,7 @@ title1: EXPERT.
 title2: SCHOLAR.
 title3: PROFESSOR.
 description1: Dr. Bulelani Jili is an Assistant Professor at Georgetown
-  University, Harvard University fellow, and Yale Law School Visiting Fellow.
+  University, Faculty Fellow at Harvard, and Yale Law School Visiting Fellow.
   His groundbreaking research examines Chinese surveillance technology,
   Africa-China relations, AI governance, digital colonialism, AI sovereignty,
   and Chinese cybersecurity threats in the Global South.
