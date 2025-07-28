@@ -43,7 +43,7 @@ awards:
   - year: "2022"
     award: Wenner-Gren Foundation Fellowship
 ---
-**Dr. Bulelani Jili** is an assistant professor at Georgetown University, Edmund A. Walsh School of Foreign Service, where he is part of the African Studies Program and an affiliate of the Science, Technology, and International Affairs (STIA) Program. His research interests include Africa-China relations, cybersecurity, ICT development, African political economy, internet policy, Chinese business law, law and development, and privacy law.
+Dr. Bulelani Jili is an assistant professor at Georgetown University, Edmund A. Walsh School of Foreign Service, where he is part of the African Studies Program and an affiliate of the Science, Technology, and International Affairs (STIA) Program. His research interests include Africa-China relations, cybersecurity, ICT development, African political economy, internet policy, Chinese business law, law and development, and privacy law.
 
 He is also a faculty associate at the Berkman Klein Center for Internet & Society, Harvard Law School. He is also a visiting fellow at Yale Law School, a former fellow at the Atlantic Council, and a former cybersecurity fellow at the Belfer Center at Harvard University. He also conducted research for the China, Law, and Development project at Oxford University. The European Research Council funds the 5-year interdisciplinary and multi-sited research project, which seeks to comprehend the underlying order of China's new globalism.
 
