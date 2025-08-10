@@ -44,6 +44,12 @@ awards:
     award: Meta Research PhD Fellowship Award
   - year: "2022"
     award: Wenner-Gren Foundation Fellowship
+  - award: Pacific Telecommunication Council Emerging Scholar Program
+    year: "2023"
+  - award: The Hague program on international cybersecurity
+    year: "2023"
+  - award: Certificate of Distinction in Teaching
+    year: "2022"
 ---
 Dr. Bulelani Jili is an Assistant Professor at Georgetown University’s Edmund A. Walsh School of Foreign Service, where he is part of the African Studies Program and an affiliate of the Science, Technology, and International Affairs (STIA) Program. His research spans Africa–China relations, cybersecurity, ICT development, African political economy, internet policy, Chinese business law, law and development, and privacy law.
 
