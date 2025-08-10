@@ -4,6 +4,7 @@ date: 2025-01-15
 summary: Dr. Jili's latest analysis examines how African nations are adapting
   Chinese surveillance technologies to local contexts, highlighting questions of
   agency and digital sovereignty.
+link: https://eastasiaforum.org/2025/05/30/africanising-chinese-surveillance-technology/
 category: Publication
 tags:
   - Africa-China Relations
