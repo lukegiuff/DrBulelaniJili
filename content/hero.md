@@ -18,4 +18,5 @@ recognition:
   - item: Google Public Policy Fellow
   - item: International Strategy Forum Fellowship
   - item: Meta Research PhD Fellowship
+  - item: " Wenner-Gren Dissertation Fieldwork Fellowship"
 ---
