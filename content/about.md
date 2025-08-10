@@ -61,6 +61,6 @@ Dr. Jili has advised leading think tanks, governments, firms, and watchdog organ
 
 His writing has appeared in journals and outlets such as African Affairs, Nature, Theory, Culture & Society, Mail & Guardian, Africa Is a Country, The Elephant, South China Morning Post, African Centre for Strategic Studies, Politico, Lawfare, Tech Policy Press, East Asia Forum, and The Economist. He is a frequent speaker at international conferences in South Africa, the Netherlands, South Korea, the UK, India, Switzerland, and Australia.
 
-His current book project, *Digital Sovereignty in Postcolonial Africa: The Spread of Chinese Surveillance Tools and the Leasing of African Sovereignty,* withStanford University Press, draws on two years of ethnographic fieldwork in Nairobi.
+His current book project, Digital Sovereignty in Postcolonial Africa: The Spread of Chinese Surveillance Tools and the Leasing of African Sovereignty*,* withStanford University Press, draws on two years of ethnographic fieldwork in Nairobi.
 
 He lives in Washington, DC.
