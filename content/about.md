@@ -24,6 +24,8 @@ education:
   - degree: Ph.D., Harvard University
     institution: Harvard University
     description: Doctoral studies in African political economy and international relations
+  - degree: "M.A., Harvard University "
+    institution: "Harvard University "
   - degree: M.Phil., Cambridge University (UK)
     institution: Cambridge University
     description: Standard Bank Africa Chairman's Scholar
