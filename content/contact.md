@@ -1,17 +1,22 @@
 ---
-title: "Contact"
-email: "bulelani.jili@georgetown.edu"
+title: Contact
+email: "bj350@georgetown.edu                                                           \
+  "
 phone: ""
-office: "Georgetown University\nEdmund A. Walsh School of Foreign Service\nWashington, DC"
-officeHours: "By appointment"
+office: |-
+  Georgetown University
+  Edmund A. Walsh School of Foreign Service
+  Washington, DC
+officeHours: By appointment
 social:
-  - platform: "Twitter"
-    url: "https://twitter.com/bulelani_jili"
-    handle: "@bulelani_jili"
-  - platform: "LinkedIn"
-    url: "https://linkedin.com/in/bulelani-jili"
-    handle: "bulelani-jili"
-formInstructions: "Please use the form below to get in touch regarding speaking engagements, media inquiries, research collaboration, or other professional matters."
+  - platform: LinkedIn
+    url: https://linkedin.com/in/bulelani-jili
+    handle: bulelani-jili
+  - platform: "Harvard Website "
+    url: https://bulelanijili.scholars.harvard.edu/Bio
+formInstructions: Please use the form below to get in touch regarding speaking
+  engagements, media inquiries, research collaboration, or other professional
+  matters.
 ---
 
 For academic inquiries, speaking engagements, media requests, or research collaboration opportunities, please feel free to reach out using the contact information above or the form below.
