@@ -16,7 +16,8 @@ secondaryButton: GET IN TOUCH
 recognitionText: Recent Recognition
 recognition:
   - item: Google Public Policy Fellow
-  - item: International Strategy Forum Fellowship
   - item: Meta Research PhD Fellowship
+  - item: International Strategy Forum Fellowship
   - item: " Wenner-Gren Dissertation Fieldwork Fellowship"
+  - item: Patrick Kelly Scholarship
 ---
