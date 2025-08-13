@@ -59,7 +59,7 @@ He is a Faculty Associate at the Berkman Klein Center for Internet & Society at 
 
 Dr. Jili has advised leading think tanks, governments, firms, and watchdog organizations, including the American Bar Association, OpenAI, the French government, Freedom House, the UK Foreign, Commonwealth & Development Office, the U.S. State Department, the United Nations, and the Center for Strategic and International Studies.
 
-His writing has appeared in journals and outlets such as African Affairs, Nature, Theory, Culture & Society, Mail & Guardian, Africa Is a Country, The Elephant, South China Morning Post, African Centre for Strategic Studies, Politico, Lawfare, Tech Policy Press, East Asia Forum, and The Economist. He is a frequent speaker at international conferences in South Africa, the Netherlands, South Korea, the UK, India, Switzerland, and Australia.
+His writing has appeared in journals and outlets such as African Affairs, Nature, Theory, Culture & Society, Financial Times, Mail & Guardian, Africa Is a Country, The Elephant, South China Morning Post, African Centre for Strategic Studies, Politico, Lawfare, Tech Policy Press, East Asia Forum, and The Economist. He is a frequent speaker at international conferences in South Africa, the Netherlands, South Korea, the UK, India, Switzerland, and Australia.
 
 His current book project, Digital Sovereignty in Postcolonial Africa: The Spread of Chinese Surveillance Tools and the Leasing of African Sovereignty*,* withStanford University Press, draws on two years of ethnographic fieldwork in Nairobi.
 
