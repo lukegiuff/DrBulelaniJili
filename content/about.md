@@ -53,7 +53,7 @@ awards:
   - award: "Orrick Fellowship, Harvard Law School "
     year: "2021"
 ---
-Dr. Bulelani Jili is an Assistant Professor at Georgetown University’s Edmund A. Walsh School of Foreign Service, where he is part of the African Studies Program and an affiliate of the Science, Technology, and International Affairs (STIA) Program. His research spans Africa–China relations, cybersecurity, ICT development, African political economy, internet policy, Chinese business law, law and development, and privacy law.
+Dr. Bulelani Jili is an Assistant Professor at Georgetown University’s Edmund A. Walsh School of Foreign Service, where he is part of the [African Studies Program]<(https://africanstudies.georgetown.edu/profiles/bulelani-jili/)> and an affiliate of the Science, Technology, and International Affairs (STIA) Program. His research spans Africa–China relations, cybersecurity, ICT development, African political economy, internet policy, Chinese business law, law and development, and privacy law.
 
 He is a Faculty Associate at the Berkman Klein Center for Internet & Society at Harvard Law School, a Visiting Fellow at Yale Law School, and a Fellow at New America. He has previously served as a Fellow at the Atlantic Council, a Cybersecurity Fellow at Harvard’s Belfer Center, and an Electronic Privacy Information Center Scholar-in-Residence. He also contributed to the China, Law, and Development project at Oxford University, a five-year, European Research Council–funded initiative examining the global reach of China’s legal and commercial influence.
 
